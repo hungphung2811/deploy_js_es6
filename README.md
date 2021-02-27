@@ -2,7 +2,7 @@
 
 ### Infomation
 
-> 1. giáo viên hướng dẫn : ** Lê Trọng Đạt **  ** Tân Văn Sơn ** 
+> 1. giáo viên hướng dẫn : **Lê Trọng Đạt**  **Tân Văn Sơn** 
 > 2. sinh viên : Phùng Văn Hưng 
 > 3. topic : website bán quần áo .
 
