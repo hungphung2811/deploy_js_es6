@@ -1,0 +1,33 @@
+{
+  "products": [],
+  "categories": [
+    {
+      "cateId": 1,
+      "cateName": "Men"
+    },
+    {
+      "cateId": 2,
+      "cateName": "Women"
+    },
+    {
+      "cateId": 3,
+      "cateName": "Accessories"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "fullName": "phung van hung",
+      "userName": "hungpv",
+      "passWord": 1234567,
+      "avatar": "../../../public/images/user.png",
+      "order": [
+        {
+          "cateId": 1,
+          "quantity": 2
+        }
+      ]
+    }
+  ],
+  "order": []
+}
