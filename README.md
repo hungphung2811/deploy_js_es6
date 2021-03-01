@@ -10,5 +10,5 @@
 
 ### Technology 
 
-> 1. html5 & css3
+> 1. html5 & css3 & tailwindcss 
 > 2. javascript ES6+
