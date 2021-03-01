@@ -108,7 +108,7 @@
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap">
                         <div class="inline-block relative">
-                            <input id="amountId" type="text" class="w-16 px-5 border-0 border-b border-gray-300 focus:outline-none" value="1">
+                            <input id="amountId" type="text" class="w-16 px-5 border-0 border-b border-gray-300 active:outline-none focus:outline-none" value="1">
                             <div class="absolute top-0 right-1 flex flex-col cursor-pointer">
                                 <button class="btn btn-up focus:outline-none">
                                     <svg class="mt-1 hover:cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -131,6 +131,13 @@
             </tbody>
         </table>
     </div>
+    <script>
+        console.log('start');
+        setTimeout(() => {
+            console.log('next step');
+        }, 0)
+        console.log('end');
+    </script>
 </body>
 
 </html>

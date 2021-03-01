@@ -1,12 +1,33 @@
-import HandleLogicCart from "../../components/website/cart/HandleLogicCart";
+import OrderApi from "../../api/orderApi";
+import OrderDetailApi from "../../api/orderDetailApi";
+import ProductApi from "../../api/productApi";
+import { CheckLogin } from "../../components/auth/checkLogin";
 import ListCheckOut from "../../components/website/cart/ListCheckOut";
 import LocalStorage from "../../localStorage/LocalStorage";
+import { $ } from "../../utils";
 
 const CheckOut = {
     async render() {
+        if (!CheckLogin()) {
+            alert("bạn cần đăng nhập trước khi checkout !");
+            await window.history.back();
+        }
         const cart = LocalStorage.getCart();
-        if (!Array.isArray(cart)||cart.length===0) {
+        const quantity = cart.length;
+        const total = cart.reduce((initial, cart) => {
+            return initial + cart.price * parseFloat(cart.amount)
+        }, 0)
+        if (!Array.isArray(cart) || cart.length === 0) {
             return /*html*/ `
+            <div class="container mx-auto lg:px-32 bg-gray-100 py-3">
+                <ul>
+                    <li class="inline-block">
+                    <a class="underline" href="/#/">Home</a>
+                    <span>></span>
+                    </li>
+                    <li class="inline-block mx-1.5 ">Checkout</li>
+                </ul>
+            </div>
                 <div class="text-center py-20 -mb-8 bg-gray-50">
                     <h4 class="font-semibold font-sans text-lg">Hiện tại chưa có sản phẩm trong giỏ hàng . hãy vào trang <a class="text-indigo-600 underline font-bold" href="/#//products">Products</a> để xem thêm</h4>
                 </div>
@@ -14,42 +35,64 @@ const CheckOut = {
         }
 
         return /*html*/ `
-            <div class="container md:px-8 lg:px-16 mt-10">
-        <div class="grid grid-cols-3 gap-6 bg-gray-100">
+        <div class="container mx-auto lg:px-32 bg-gray-100 py-3">
+                <ul>
+                    <li class="inline-block">
+                    <a class="underline" href="/#/">Home</a>
+                    <span>></span>
+                    </li>
+                    <li class="inline-block mx-1.5 ">Checkout</li>
+                </ul>
+            </div>
+        <div class="container md:px-8 lg:px-16 mt-3">
+
+        <div class="grid grid-cols-3 gap-4 bg-gray-100">
             <div class="col-span-2">
+                <div class="p-3">
+                        <div class=" mt-2">
+                            <label class="ml-1 text-sm font-semibold" for="">Name *</label>
+                            <input id="nameOrderId" type="text" class="w-full my-2 py-3 pl-2 border-gray-300 text-xs text-gray-700" placeholder="Name *">
+                        </div>
+                        <div class=" mt-2">
+                            <label class="ml-1 text-sm font-semibold" for="">Phone Number *</label>
+                            <input id="phoneOrderId" type="text" class="w-full my-2 py-3 pl-2 border-gray-300 text-xs text-gray-700" placeholder="Phone *">
+                        </div>
+                        <div class=" mt-2">
+                            <label class="ml-1 text-sm font-semibold" for="">Address *</label>
+                            <textarea id="addressOrderId" class="w-full my-2 py-3 pl-2 border-gray-300 text-xs text-gray-700" rows="3" placeholder="Address *"></textarea>
+                        </div>
+                </div>
                 <div class="py-3">
                     <div class="flex flex-col">
                         <div class="-my-2 overflow-x-auto">
                             <div class="py-2 align-middle inline- min-w-full sm:px-3 lg:px-4">
-                                <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-sm"
-                                    id="list-products">
-
+                                <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-sm" id="list-products">
                                     <table class="min-w-full divide-y divide-gray-200 ">
                                         <thead class="bg-gray-50">
                                             <tr>
                                                 <th scope="col"
-                                                    class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
-                                                    #
+                                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                    
                                                 </th>
                                                 <th scope="col"
-                                                    class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
-                                                    Name
+                                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                    product
                                                 </th>
                                                 <th scope="col"
-                                                    class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
+                                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                     price
                                                 </th>
                                                 <th scope="col"
-                                                    class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
+                                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                     quantity
                                                 </th>
                                                 <th scope="col"
-                                                    class="py-3 text-center text-sm font-medium text-gray-500 uppercase tracking-wider">
-                                                    Delete
+                                                    class="py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                    subTotal
                                                 </th>
                                             </tr>
                                         </thead>
-                                        <tbody class="bg-white divide-y divide-gray-200 list-cart-check-out">
+                                        <tbody class="bg-white divide-y divide-gray-200 list-cart-check-out" id="listOrderId">
 
                                         ${await ListCheckOut.render(cart)}
 
@@ -64,17 +107,63 @@ const CheckOut = {
                         </div>
                     </div>
                 </div>
+                
             </div>
-            <div class="col-span-1">
-                checkout
+            <div class="col-span-1 py-3 pr-3 mt-8">
+                <div class="bg-white shadow p-3 mt-1">
+                    <div class="flex justify-between items-center border-b border-gray-300 pb-3">
+                        <span class="font-semibold text-sm"> ${quantity}  Product</span>
+                        <span class="font-semibold text-sm uppercase">$ ${total.toFixed(2)}</span> 
+                    </div>
+                    <div class="mt-3 flex justify-between items-center border-b border-gray-300 pb-3">
+                        <span class="font-semibold text-sm">Shipping</span>
+                        <span class="font-semibold text-sm uppercase">$ 45.00</span> 
+                    </div>
+                    <div class="mt-3 flex justify-between items-center border-b border-gray-300 pb-3">
+                        <span class="font-semibold text-sm">Total</span>
+                        <span class="font-semibold text-sm uppercase">$${(total + 45.00).toFixed(2)}</span> 
+                    </div>
+                    <div class="mt-3 text-center">
+                        <button id="btnCheckoutId" class="uppercase px-5 py-2 text-sm text-white font-semibold bg-black hover:bg-yellow-600">checkout</button>
+                    </div>
+                </div>
             </div>
         </div>
 
     </div>
         `
     },
-    afterRendr(){
-        HandleLogicCart.logical().bind(HandleLogicCart);
+    async afterRender() {
+        await ListCheckOut.afterRender() + (function () {
+            if (!$('#btnCheckoutId')) return;
+            $('#btnCheckoutId').onclick = async () => {
+                try {
+                    const carts = LocalStorage.getCart();
+                    const user = LocalStorage.getUser();
+                    const costomer = {
+                        id: '',
+                        name: $('#nameOrderId').value,
+                        phone: $('#phoneOrderId').value,
+                        address: $('#addressOrderId').value,
+                        userId: user.id
+                    }
+                    let { data: lastestOrder } = await OrderApi.add(costomer);
+                    carts.forEach(async cart => {
+                        const newCart = { ...cart, productId: cart.id }
+                        const orderDetail = { ...newCart, id: '', orderId: lastestOrder.id };
+                        await OrderDetailApi.add(orderDetail);
+                        const { data: product } = await ProductApi.get(orderDetail.productId);
+                        const newInstock = product.instock - orderDetail.amount;
+                        const newProduct = { ...product, instock: newInstock }
+                        await ProductApi.update(orderDetail.productId, newProduct);
+                    })
+                    alert('order thành công !');
+                } catch (error) {
+                    console.log(error);
+                    alert('Đã có lỗi xảy ra vui lòng thử lại !');
+                }
+            }
+        })();
     }
 }
 

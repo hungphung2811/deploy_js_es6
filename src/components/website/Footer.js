@@ -9,13 +9,13 @@ const Footer = {
                 </div>
                 <div class="text-center">
                     <form action="">
-                    <input type="text">
+                    <input type="text" placeholder="Email*">
                     <button class="py-2 px-5 mt-3 text-center bg-black text-white hover:bg-yellow-600 transition-all duration-300">Send</button>
                     </form>
                 </div>
                 <div class="text-center mt-7">
                     <ul>
-                        <li class="font-momo text-sm mx-2 font-semibold inline-block uppercase hover:text-yellow-600"><a href="/#/">What's new</a></li>
+                        <li class="font-momo text-sm mx-2 font-semibold inline-block uppercase hover:text-yellow-600"><a href="/#//blog">What's new</a></li>
                         <li class="font-momo text-sm mx-2 font-semibold inline-block uppercase hover:text-yellow-600"><a href="/#//category/1">Men</a></li>
                         <li class="font-momo text-sm mx-2 font-semibold inline-block uppercase hover:text-yellow-600"><a href="/#//category/2">Women</a></li>
                         <li class="font-momo text-sm mx-2 font-semibold inline-block uppercase hover:text-yellow-600"><a href="/#//category/3">Accessories</a></li>

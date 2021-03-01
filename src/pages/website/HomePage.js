@@ -1,9 +1,12 @@
+import CategoryApi from '../../api/categoryApi';
 import LastestBlog from '../../components/website/home/LastestBlog';
 import Policy from '../../components/website/home/Policy';
 import Top4Product from '../../components/website/home/Top4Product';
 
 const HomePage = {
     async render() {
+        const { data: categories } = await CategoryApi.getItemsByOption({ _sort: 'cateId', _order: 'desc', _limit: 2 })
+        console.log(categories);
         return /*html*/`
             <section class="p-1 xl:p-0 relative">
                 <div class="">
@@ -23,24 +26,21 @@ const HomePage = {
 
             <section class="container mx-auto xl:px-32 mt-8">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4">
-                    <div class="relative bg-gray-300">
-                        <div>
-                            <a href=""><img src="https://big-skins.com/frontend/foxic-html-demo/images/skins/fashion/banner-fashion-2-02.webp" alt=""></a>
-                        </div>
-                        <div class="absolute top-1/2 right-1/3 bg-white p-3 opacity-90">
-                            <p class="font-bold">Accesssories</p>
-                            <span class="mt-3 text-xs text-opacity-90">This best lock anywhere</span>
-                        </div>
-                    </div>
-                    <div class="relative bg-gray-300">
-                        <div>
-                            <a href=""><img src="https://big-skins.com/frontend/foxic-html-demo/images/skins/fashion/banner-fashion-2-04.webp" alt=""></a>
-                        </div>
-                        <div class="absolute top-1/2 right-1/3 bg-white p-3 opacity-90">
-                            <p class="font-bold">Accesssories</p>
-                            <span class="mt-3 text-xs text-opacity-90">This best lock anywhere</span>
-                        </div>
-                    </div>
+                    ${categories.map(category => {
+                        return /*html*/ `
+                            <div class="relative bg-gray-300">
+                                <div>
+                                    <a href="/#//category/${category.cateId}"><img title="${category.cateName}" src="${category.image}" alt="${category.cateName}"></a>
+                                </div>
+                                <div class="absolute top-1/2 left-1/4 -ml-8 shadow-sm rounded-sm bg-white p-3 opacity-90">
+                                    <a href="/#//category/${category.cateId}">
+                                        <p class="font-bold">${category.cateName}</p>
+                                    </a>
+                                    <span class="mt-3 text-xs text-opacity-90">${category.short_desc}</span>
+                                </div>
+                            </div>
+                        `
+                    }).join('')}
                 </div>
             </section>
 
@@ -66,7 +66,7 @@ const HomePage = {
             ${await Policy.render()}
         `;
     },
-    async afterRender(){
+    async afterRender() {
         return `${await Top4Product.afterRender()}`
     }
 }

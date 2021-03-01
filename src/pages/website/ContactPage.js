@@ -1,3 +1,6 @@
+import ContactApi from '../../api/contactApi';
+import LocalStorage from '../../localStorage/LocalStorage';
+import {$} from '../../utils';
 const ContactPage = {
     render(){
         return /*html*/ `
@@ -130,11 +133,11 @@ const ContactPage = {
                     </p>
                 </div>
                 <div class="w-full mt-8">
-                    <form>
-                        <input type="text" class="w-full my-2 py-3 pl-2 border-gray-300 text-xs text-gray-700" placeholder="Name *">
-                        <input type="text" class="w-full my-2 py-3 pl-2 border-gray-300 text-xs text-gray-700" placeholder="Email *">
-                        <input type="text" class="w-full my-2 py-3 pl-2 border-gray-300 text-xs text-gray-700" placeholder="Subtitle">
-                        <textarea class="w-full my-2 py-3 pl-2 border-gray-300 text-xs text-gray-700" rows="5" placeholder="Message"></textarea>
+                    <form id="fomrContactId">
+                        <input id="nameContactId" type="text" class="w-full my-2 py-3 pl-2 border-gray-300 text-xs text-gray-700" placeholder="Name *">
+                        <input id="emailContactId" type="text" class="w-full my-2 py-3 pl-2 border-gray-300 text-xs text-gray-700" placeholder="Email *">
+                        <input id="subTitleContactId" type="text" class="w-full my-2 py-3 pl-2 border-gray-300 text-xs text-gray-700" placeholder="Subtitle">
+                        <textarea id="messageContactId" class="w-full my-2 py-3 pl-2 border-gray-300 text-xs text-gray-700" rows="5" placeholder="Message"></textarea>
                         <button class="bg-black py-1.5 px-5 mt-3 text-white text-sm font-semibold">Post</button>
                     </form>
                 </div>
@@ -143,6 +146,26 @@ const ContactPage = {
 
     </div>
         `
+    },
+    async afterRender(){
+        $('#fomrContactId').addEventListener('submit',async (e) => {
+            e.preventDefault();
+            const user = LocalStorage.getUser();
+            if (!user) {
+                alert('Bạn cần đăng nhập !');
+                return;
+            }
+            console.log(user);
+            const contact = {
+                id: '',
+                name:$('#nameContactId').value,
+                email:$('#emailContactId').value,
+                subTitle:$('#subTitleContactId').value,
+                message:$('#messageContactId').value,
+                userId: user.id
+            }
+            await ContactApi.add(contact);
+        })
     }
 }
 

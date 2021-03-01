@@ -76,6 +76,7 @@ const DetailProductPage = {
                                 <p class="text-red-500 text-xs">You save: $ ${product.price * product.sale / 100} (${product.sale}%)</p>
                             </div>
                         </div>
+                        
                         <div class="my-5 pb-5 border-b border-gray-300">
                                 <div class="inline-block relative">
                                     <input id="amountId" type="text" class="w-24 px-5 py-3 border-2 border-black rounded" value="${product.amount ? product.amount : 1}">

@@ -2,8 +2,6 @@ import { parseRequestURL, $ } from "../../utils";
 
 const SideBar = {
     render() {
-        const { resource } = parseRequestURL();
-        console.log(resource);
         return /*html*/ `
             <aside class="pt-2 bg-gray-100 col-span-2 shadow border-r-2 border-gray-200">
                 <div class="mt-3 pl-3">

@@ -3,9 +3,9 @@ import { $ } from '../../../utils'
 
 const Top4Product = {
     async render() {
-        const { data: productsMen } = await ProductApi.getItemsByOption({ cateId: 1, _limit: 4, _sort: 'price' });
-        const { data: productsWomen } = await ProductApi.getItemsByOption({ cateId: 2, _limit: 4, _sort: 'price' });
-        const { data: productsAccessory } = await ProductApi.getItemsByOption({ cateId: 3, _limit: 4, _sort: 'price' });
+        const { data: productsMen } = await ProductApi.getItemsByOption({ cateId: 1, _limit: 4, _sort: 'view' });
+        const { data: productsWomen } = await ProductApi.getItemsByOption({ cateId: 2, _limit: 4, _sort: 'view' });
+        const { data: productsAccessory } = await ProductApi.getItemsByOption({ cateId: 3, _limit: 4, _sort: 'view' });
 
         return /*html*/ `
         <section class="mt-14 container mx-auto lg:px-32">

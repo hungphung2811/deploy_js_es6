@@ -1,3 +1,4 @@
+import CategoryApi from '../../api/categoryApi';
 import ProductApi from '../../api/productApi';
 import FilterProducts from '../../components/website/product/FilterProducts'
 import { parseRequestURL } from '../../utils';
@@ -5,6 +6,8 @@ import { parseRequestURL } from '../../utils';
 const CategoryPage = {
     async render() {
         const { id } = await parseRequestURL();
+        const { data: categories } = await CategoryApi.getAll();
+        const category = categories.find(item => item.cateId == id);
         const { data: products } = await ProductApi.getItemsByOption({ cateId: id });
         if (!(Array.isArray(products) && products.length)) {
             return /*html*/ `
@@ -20,8 +23,11 @@ const CategoryPage = {
         return /*html*/`
             <div class="container mx-auto lg:px-32 bg-gray-100 py-3">
                 <ul>
-                    <li class="inline-block mr-3 underline"><a href="#">Home ></a></li>
-                    <li class="inline-block mx-3 ">Products</li>
+                    <li class="inline-block">
+                    <a class="underline" href="/#/">Home</a>
+                    <span>></span>
+                    </li>
+                    <li class="inline-block mx-1.5 ">${category.cateName}</li>
                 </ul>
             </div>
             <div class="container mx-auto pt-3 xl:px-32 grid grid-cols-11 gap-4">

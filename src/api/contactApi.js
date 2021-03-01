@@ -1,13 +1,17 @@
 import { axiosClient } from './axiosClient';
 
-const CategoryApi = {
+const ContactApi = {
     getAll() {
-        const url = `/categories`;
+        const url = `/contacts`;
         return axiosClient.get(url);
     },
     get(id) {
-        const url = `/categories/${id}`;
+        const url = `/contacts/${id}`;
         return axiosClient.get(url);
+    },
+    add(contact){
+        const url = `/contacts`;
+        return axiosClient.post(url, contact);
     },
     getItemsByOption(option) {
         const arrOption = [];
@@ -16,9 +20,9 @@ const CategoryApi = {
                 arrOption.push(`${key}=${option[key]}&`);
             }
         }
-        const url = `/categories?${arrOption.join('')}`;
+        const url = `/contacts?${arrOption.join('')}`;
         return axiosClient.get(url);
     }
 }
 
-export default CategoryApi;
+export default ContactApi;

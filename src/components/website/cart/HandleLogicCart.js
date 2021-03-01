@@ -33,13 +33,13 @@ const HandleLogicCart = {
             });
         });
     },
-    setCartValues(cart) {
+    setCartValues(cart = LocalStorage.getCart()) {
         // let cart = LocalStorage.getCart();
         let tempTotal = 0;
         let itemsTotal = 0;
         cart.map(item => {
-            tempTotal += item.price * item.amount;
-            itemsTotal += item.amount;
+            tempTotal += item.price * parseFloat(item.amount);
+            itemsTotal += parseFloat(item.amount);
         });
 
         $('#cart-values').innerText = itemsTotal;
@@ -55,7 +55,7 @@ const HandleLogicCart = {
                 </div>
                 <div class="ml-3">
                     <p class="text-sm font-semibold">${cartItems.name}</p>
-                    <p class="text-xs font-normal mt-0.5">$ ${cartItems.price}</p>
+                    <p class="text-xs font-normal mt-0.5">$ ${(cartItems.price*cartItems.amount).toFixed(2)}</p>
                     <button data-id=${cartItems.id} class="remove text-xs text-gray-600">remove</button>
                 </div>
             </div>

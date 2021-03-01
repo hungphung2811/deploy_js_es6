@@ -8,6 +8,7 @@ import AdminProductsPage from './pages/admin/AdminProductsPage';
 import DashboardPage from './pages/admin/DashboardPage';
 import Error404Page from './pages/Error404Page';
 import BlogPage from './pages/website/BlogPage';
+import BlogDetailPage from './pages/website/BlogDetailPage';
 import CategoryPage from './pages/website/CategoryPage';
 import CheckOut from './pages/website/CheckOut';
 import ContactPage from './pages/website/ContactPage';
@@ -23,6 +24,7 @@ const routes = {
     '/frontend/category/:id': CategoryPage,
     '/frontend/contact': ContactPage,
     '/frontend/blog': BlogPage,
+    '/frontend/blog/:id': BlogDetailPage,
     '/frontend/checkout': CheckOut,
     '/backend': DashboardPage,
     '/backend/products': AdminProductsPage,

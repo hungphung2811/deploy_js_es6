@@ -1,17 +1,129 @@
 {
-  "products": [],
+  "products": [
+    {
+      "id": 1,
+      "name": "Refined Steel Shoes",
+      "image": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-product%2Fproduct-05-1.webp?alt=media&token=c8a34223-435c-4d0a-aaf7-eeb739027c2e",
+      "price": "65.00",
+      "status": true,
+      "quantity": "44",
+      "instock": 29,
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga consequatur provident pariatur blanditiis minus deserunt facere nesciunt vitae. Repellendus hic aliquam quasi corporis delectus odit commodi labore molestias recusandae expedita!",
+      "view": 15,
+      "cateId": 2,
+      "sale": 10
+    },
+    {
+      "id": 2,
+      "name": "Tasty Concrete Chips",
+      "image": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-product%2Fproduct-07-1.webp?alt=media&token=ab743c9f-f7da-40ae-8a0a-1d5c6bb072d0",
+      "price": "62.00",
+      "sale": 10,
+      "status": true,
+      "quantity": "57",
+      "instock": 56,
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga consequatur provident pariatur blanditiis minus deserunt facere nesciunt vitae. Repellendus hic aliquam quasi corporis delectus odit commodi labore molestias recusandae expedita!",
+      "view": 12,
+      "cateId": 2
+    },
+    {
+      "id": 3,
+      "name": "Awesome Soft Fish",
+      "image": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-product%2Fproduct-06-1.webp?alt=media&token=3f0d605d-9590-4862-b2a0-51235130d137",
+      "price": "63.00",
+      "sale": 10,
+      "status": true,
+      "quantity": "51",
+      "instock": 51,
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga consequatur provident pariatur blanditiis minus deserunt facere nesciunt vitae. Repellendus hic aliquam quasi corporis delectus odit commodi labore molestias recusandae expedita!",
+      "view": 18,
+      "cateId": 2,
+      "amount": 5
+    },
+    {
+      "name": "Refined Steel Shoes12",
+      "image": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-product%2Fproduct-18-1.webp?alt=media&token=4d5853bd-15ab-4458-b49b-73060cecee37",
+      "price": "65.00",
+      "sale": 10,
+      "status": true,
+      "quantity": "44",
+      "instock": 56,
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga consequatur provident pariatur blanditiis minus deserunt facere nesciunt vitae. Repellendus hic aliquam quasi corporis delectus odit commodi labore molestias recusandae expedita!",
+      "view": 13,
+      "cateId": 1,
+      "id": 4
+    },
+    {
+      "id": 5,
+      "name": "Fantastic Fresh Fish",
+      "image": "https://big-skins.com/frontend/foxic-html-demo/images/skins/fashion/products/product-01-1.webp",
+      "price": "34.00",
+      "sale": 10,
+      "status": true,
+      "quantity": "73",
+      "instock": 63,
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga consequatur provident pariatur blanditiis minus deserunt facere nesciunt vitae. Repellendus hic aliquam quasi corporis delectus odit commodi labore molestias recusandae expedita!",
+      "view": 12,
+      "cateId": 2
+    },
+    {
+      "id": 7,
+      "name": "Tasty Fresh Pizza",
+      "image": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-product%2Fproduct-18-1.webp?alt=media&token=b166af21-ca1b-4f39-abb2-ede1ff46b31c",
+      "price": "75.00",
+      "sale": 10,
+      "status": true,
+      "quantity": "61",
+      "instock": 60,
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga consequatur provident pariatur blanditiis minus deserunt facere nesciunt vitae. Repellendus hic aliquam quasi corporis delectus odit commodi labore molestias recusandae expedita!",
+      "view": 12,
+      "cateId": 1
+    },
+    {
+      "id": 8,
+      "name": "Tasty Concrete Towels",
+      "image": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-product%2Fproduct-17-1.webp?alt=media&token=d4dc2413-17a0-4b39-bf13-7e480c400121",
+      "price": "53.00",
+      "sale": 10,
+      "status": true,
+      "quantity": "36",
+      "instock": 36,
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga consequatur provident pariatur blanditiis minus deserunt facere nesciunt vitae. Repellendus hic aliquam quasi corporis delectus odit commodi labore molestias recusandae expedita!",
+      "view": 14,
+      "cateId": 1
+    },
+    {
+      "name": "Awesome Metal ",
+      "image": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-product%2Fproduct-12-1.webp?alt=media&token=b480e9e0-91b8-46f4-8af0-17dbf73db4d6",
+      "price": "71.00",
+      "sale": 10,
+      "status": true,
+      "quantity": "29",
+      "instock": 29,
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga consequatur provident pariatur blanditiis minus deserunt facere nesciunt vitae. Repellendus hic aliquam quasi corporis delectus odit commodi labore molestias recusandae expedita!",
+      "view": 12,
+      "cateId": 1,
+      "id": 9
+    }
+  ],
   "categories": [
     {
       "cateId": 1,
-      "cateName": "Men"
+      "cateName": "Men",
+      "image": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-categories%2Fproduct-18-1.webp?alt=media&token=9d856f0d-7664-4329-9477-422a1a7701bf",
+      "short_desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
     },
     {
       "cateId": 2,
-      "cateName": "Women"
+      "cateName": "Women",
+      "image": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-categories%2Fbanner-fashion-2-04.webp?alt=media&token=66c01dbc-e8e7-4def-a85b-7e900fddf74f",
+      "short_desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
     },
     {
       "cateId": 3,
-      "cateName": "Accessories"
+      "cateName": "Accessories",
+      "image": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-categories%2Fbanner-fashion-2-02.webp?alt=media&token=5c849c25-d41c-448c-96fd-2e0e1db7b6b4",
+      "short_desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
     }
   ],
   "users": [
@@ -29,5 +141,87 @@
       ]
     }
   ],
-  "order": []
+  "order": [
+    {
+      "id": 1,
+      "name": "",
+      "phone": "",
+      "address": "",
+      "userId": 1
+    }
+  ],
+  "order_detail": [
+    {
+      "id": 23,
+      "name": "Refined Steel Shoes",
+      "image": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-product%2Fproduct-05-1.webp?alt=media&token=c8a34223-435c-4d0a-aaf7-eeb739027c2e",
+      "price": "65.00",
+      "status": true,
+      "quantity": "44",
+      "instock": 44,
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga consequatur provident pariatur blanditiis minus deserunt facere nesciunt vitae. Repellendus hic aliquam quasi corporis delectus odit commodi labore molestias recusandae expedita!",
+      "view": 15,
+      "cateId": 2,
+      "sale": 10,
+      "amount": "5",
+      "productId": 1,
+      "orderId": 15
+    },
+    {
+      "id": 24,
+      "name": "Tasty Concrete Chips",
+      "image": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-product%2Fproduct-07-1.webp?alt=media&token=ab743c9f-f7da-40ae-8a0a-1d5c6bb072d0",
+      "price": "62.00",
+      "sale": 10,
+      "status": true,
+      "quantity": "57",
+      "instock": 57,
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga consequatur provident pariatur blanditiis minus deserunt facere nesciunt vitae. Repellendus hic aliquam quasi corporis delectus odit commodi labore molestias recusandae expedita!",
+      "view": 12,
+      "cateId": 2,
+      "amount": 1,
+      "productId": 2,
+      "orderId": 15
+    }
+  ],
+  "blog": [
+    {
+      "id": 1,
+      "title": "Meet the Former Model Designing Couture-Level Accessories in Paris",
+      "short_desc": "Aenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat justo enim. Venenatis eget adipiscing luctus lorem. Adipiscing veni amet luctus enim sem libero tellus viverra venenatis aliquam. Commodo natoque quam pulvinar elit",
+      "image": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-blog%2Fblog-2-1000x565.jpg?alt=media&token=14480e65-a183-4871-aaaa-25468414dc0b",
+      "full_desc": "Aenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat justo enim. Venenatis eget adipiscing luctus lorem. <img class='my-3' src='https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-blog%2Fh2_bg-5-1000x565.jpg?alt=media&token=ac6cacf3-8840-4c87-913b-3043a4848e65' alt='hung'/> Adipiscing veni amet luctus enim sem libero tellus viverra venenatis aliquam. Commodo natoque quam pulvinar elit Aenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat justo enim. Venenatis eget adipiscing luctus lorem. Adipiscing veni amet luctus enim sem libero tellus viverra venenatis aliquam. Commodo natoque quam pulvinar elitAenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat justo enim. Venenatis eget adipiscing luctus lorem. Adipiscing veni amet luctus enim sem libero tellus viverra venenatis aliquam. Commodo natoque quam pulvinar elit "
+    },
+    {
+      "id": 2,
+      "title": "Meet the Former Model Designing Couture-Level Accessories in Paris",
+      "short_desc": "Aenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat justo enim. Venenatis eget adipiscing luctus lorem. Adipiscing veni amet luctus enim sem libero tellus viverra venenatis aliquam. Commodo natoque quam pulvinar elit",
+      "image": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-blog%2Fblog-3-1000x565.jpg?alt=media&token=6457cac0-22d7-4b78-ae83-e5cff0a94fd4",
+      "full_desc": "Aenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat justo enim. Venenatis eget adipiscing luctus lorem. <img class='my-3' src='https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-blog%2Fblog-1-960x565.jpg?alt=media&token=0390a6d7-fd27-43ae-a158-0111ef776e76' alt='hung'/> Adipiscing veni amet luctus enim sem libero tellus viverra venenatis aliquam. Commodo natoque quam pulvinar elit Aenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat justo enim. Venenatis eget adipiscing luctus lorem. Adipiscing veni amet luctus enim sem libero tellus viverra venenatis aliquam. Commodo natoque quam pulvinar elitAenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat justo enim. Venenatis eget adipiscing luctus lorem. Adipiscing veni amet luctus enim sem libero tellus viverra venenatis aliquam. Commodo natoque quam pulvinar elit "
+    },
+    {
+      "id": 3,
+      "title": "Meet the Former Model Designing Couture-Level Accessories in Paris",
+      "short_desc": "Aenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat justo enim. Venenatis eget adipiscing luctus lorem. Adipiscing veni amet luctus enim sem libero tellus viverra venenatis aliquam. Commodo natoque quam pulvinar elit",
+      "image": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-blog%2Fblog-02.webp?alt=media&token=192b241f-714d-4ef1-83dc-2d32d0489a29",
+      "full_desc": "Aenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat justo enim. Venenatis eget adipiscing luctus lorem. <img class='my-3' src='https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-blog%2Fh2_bg-5-1000x565.jpg?alt=media&token=ac6cacf3-8840-4c87-913b-3043a4848e65' alt='hung'/> Adipiscing veni amet luctus enim sem libero tellus viverra venenatis aliquam. Commodo natoque quam pulvinar elit Aenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat justo enim. Venenatis eget adipiscing luctus lorem. Adipiscing veni amet luctus enim sem libero tellus viverra venenatis aliquam. Commodo natoque quam pulvinar elitAenean eleifend ante maecenas pulvinar montes lorem et pede dis dolor pretium donec dictum. Vici consequat justo enim. Venenatis eget adipiscing luctus lorem. Adipiscing veni amet luctus enim sem libero tellus viverra venenatis aliquam. Commodo natoque quam pulvinar elit "
+    }
+  ],
+  "contacts": [
+    {
+      "id": 1,
+      "name": "hung",
+      "email": "hung",
+      "subTitle": "subtitle",
+      "message": "meassage"
+    },
+    {
+      "id": 2,
+      "name": "hung",
+      "email": "hung",
+      "subTitle": "subtitle",
+      "message": "phung van hung",
+      "userId": 1
+    }
+  ]
 }

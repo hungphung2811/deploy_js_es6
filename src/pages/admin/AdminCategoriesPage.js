@@ -1,3 +1,4 @@
+import ListCategories from '../../components/admin/categories/ListCategories';
 import FormAdd from '../../components/admin/products/FormAdd';
 import ListProducts from '../../components/admin/products/ListProducts';
 import { $ } from '../../utils';
@@ -15,7 +16,7 @@ const AdminCategoriesPage = {
                         <div class="-my-2 overflow-x-auto">
                             <div class="py-2 align-middle inline- min-w-full sm:px-3 lg:px-4">
                                 <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-sm" id="list-products">
-                                    ${await ListProducts.render()}
+                                    ${await ListCategories.render()}
                                 </div>
                             </div>
                         </div>

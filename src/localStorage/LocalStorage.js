@@ -15,6 +15,9 @@ const LocalStorage = {
     getCart() {
         return localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
     },
+    removeCart() {
+        return localStorage.removeItem('cart');
+    },
     saveUser(user) {
         localStorage.setItem('user', JSON.stringify(user));
     },
