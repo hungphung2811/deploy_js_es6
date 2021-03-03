@@ -33,7 +33,7 @@ const Top4Product = {
                                                     </div>
                                                 </a>
                                                 <div class="border-t border-gray-400 border-opacity-90 mt-1 px-3 pb-3">
-                                                    <h3 class="text-sm mt-2 group-hover:opacity-0 group-hover:invisible transition-all duration-300">
+                                                    <h3 class="truncate text-sm mt-2 group-hover:opacity-0 group-hover:invisible transition-all duration-300">
                                                         <a href="/#//product/${product.id}">
                                                             ${product.name}
                                                         </a>
@@ -63,7 +63,7 @@ const Top4Product = {
                                                     </div>
                                                 </a>
                                                 <div class="border-t border-gray-400 border-opacity-90 mt-1">
-                                                    <h3 class="text-sm mt-2 group-hover:opacity-0 group-hover:invisible transition-all duration-300">
+                                                    <h3 class="truncate text-sm mt-2 group-hover:opacity-0 group-hover:invisible transition-all duration-300">
                                                         <a href="/#//product/${product.id}">
                                                             ${product.name}
                                                         </a>
@@ -93,7 +93,7 @@ const Top4Product = {
                                                     </div>
                                                 </a>
                                                 <div class="border-t border-gray-400 border-opacity-90 mt-1">
-                                                    <h3 class="text-sm mt-2 group-hover:opacity-0 group-hover:invisible transition-all duration-300">
+                                                    <h3 class="truncate text-sm mt-2 group-hover:opacity-0 group-hover:invisible transition-all duration-300">
                                                         <a href="/#//product/${product.id}">
                                                             ${product.name}
                                                         </a>

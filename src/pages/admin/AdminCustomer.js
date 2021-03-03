@@ -1,8 +1,10 @@
 import FormAddCategory from '../../components/admin/categories/formAddCategory';
 import ListCategories from '../../components/admin/categories/ListCategories';
+import FormAddCustomer from '../../components/admin/customer/FormAddCustomer';
+import ListCustomer from '../../components/admin/customer/ListCustomer';
 import { $ } from '../../utils';
 
-const AdminCategoriesPage = {
+const AdminCustomerPage = {
     async render() {
         return /*html*/`
                 <div class="bg-gray-200 py-3">
@@ -14,8 +16,8 @@ const AdminCategoriesPage = {
                     <div class="flex flex-col">
                         <div class="-my-2 overflow-x-auto">
                             <div class="py-2 align-middle inline- min-w-full sm:px-3 lg:px-4">
-                                <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-sm" id="listCategoriesId">
-                                    ${await ListCategories.render()}
+                                <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-sm" id="listCustomerId">
+                                    ${await ListCustomer.render()}
                                 </div>
                             </div>
                         </div>
@@ -31,15 +33,15 @@ const AdminCategoriesPage = {
         `;
     },
     async afterRender() {
-        return `${await ListCategories.afterRender()+(() => {
+        return `${await ListCustomer.afterRender() + (() => {
             const close = $('#close');
             const popUpContainer = $('.pop-up__container');
             const formAdd = $('#formBackend');
             if (!$('#btn-addNew')) console.log('hung');
             $('#btn-addNew').addEventListener("click", async () => {
-                formAdd.innerHTML = await FormAddCategory.render();
+                formAdd.innerHTML = await FormAddCustomer.render();
                 popUpContainer.classList.toggle('active');
-                await FormAddCategory.afterRender();
+                await FormAddCustomer.afterRender();
             })
             if (close) {
                 close.addEventListener('click', (event) => {
@@ -47,8 +49,8 @@ const AdminCategoriesPage = {
                     popUpContainer.classList.remove('active');
                 });
             }
-        })() }`
+        })()}`
     }
 }
 
-export default AdminCategoriesPage;
+export default AdminCustomerPage;

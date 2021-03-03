@@ -1,8 +1,8 @@
 import ContactApi from '../../api/contactApi';
 import LocalStorage from '../../localStorage/LocalStorage';
-import {$} from '../../utils';
+import { $ } from '../../utils';
 const ContactPage = {
-    render(){
+    render() {
         return /*html*/ `
         <div>
         <div class="container mx-auto py-10 text-center bg-gray-100">
@@ -147,24 +147,24 @@ const ContactPage = {
     </div>
         `
     },
-    async afterRender(){
-        $('#fomrContactId').addEventListener('submit',async (e) => {
+    async afterRender() {
+        $('#fomrContactId').addEventListener('submit', async (e) => {
             e.preventDefault();
             const user = LocalStorage.getUser();
             if (!user) {
                 alert('Bạn cần đăng nhập !');
                 return;
             }
-            console.log(user);
             const contact = {
                 id: '',
-                name:$('#nameContactId').value,
-                email:$('#emailContactId').value,
-                subTitle:$('#subTitleContactId').value,
-                message:$('#messageContactId').value,
+                name: $('#nameContactId').value,
+                email: $('#emailContactId').value,
+                subTitle: $('#subTitleContactId').value,
+                message: $('#messageContactId').value,
                 userId: user.id
             }
             await ContactApi.add(contact);
+            alert('cảm ơn bạn đã Liên hệ với chúng tôi !');
         })
     }
 }

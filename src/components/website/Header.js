@@ -1,7 +1,8 @@
 import CategoryApi from '../../api/categoryApi';
 import UserApi from '../../api/userApi';
-import { $ } from '../../utils';
 import LocalStorage from '../../localStorage/LocalStorage';
+import firebase from "../../firebase";
+import { $ } from '../../utils';
 const Header = {
     async render() {
         const { data: categories } = await CategoryApi.getAll();
@@ -139,7 +140,7 @@ const Header = {
                         </div>
                         <div class="mt-3">
                             <label class="font-semibold">Avatar *</label>
-                            <input id="avatarId" type="text" class="w-full my-1 py-3 pl-2 border-gray-300 text-xs text-gray-700"
+                            <input id="avatarId" type="file" class="w-full my-1 py-3 pl-2 border-gray-300 text-xs text-gray-700"
                                 placeholder="Avatar *">
                         </div>
                         <div class="text-center">
@@ -182,7 +183,6 @@ const Header = {
                 let fullName = $('#formRegisterId').querySelector('#fullNameId').value;
                 let userName = $('#formRegisterId').querySelector('#userNameFormRegisterId').value;
                 let passWord = $('#formRegisterId').querySelector('#passwordFormRegisterId').value;
-                let avatar = $('#formRegisterId').querySelector('#avatarId').value || "../../../public/images/user.png"
 
                 const { data: users } = await UserApi.getAll();
                 let tempUser = users.find(user => user.userName == userName);
@@ -190,17 +190,27 @@ const Header = {
                     alert('tên đăng nhập đã tồn tại');
                 }
                 else {
-                    const user = {
-                        id: '',
-                        fullName,
-                        userName,
-                        passWord,
-                        avatar
+                    const customerAvatar = $('#avatarId').files[0];
+                    if (!customerAvatar) {
+                        console.log('ban can nhap avatar');
+                        return
                     }
-                    UserApi.add(user);
-                    LocalStorage.saveUser(user);
-                    this.setUpUser(user);
-                    alert('Register thành công !')
+                    let storageRef = firebase.storage().ref(`image-customer/${customerAvatar.name}`);
+                    storageRef.put(customerAvatar).then(() => {
+                        storageRef.getDownloadURL().then(async (url) => {
+                            const user = {
+                                id: '',
+                                userName,
+                                fullName,
+                                passWord,
+                                avatar: url,
+                            }
+                            UserApi.add(user);
+                            LocalStorage.saveUser(user);
+                            this.setUpUser(user);
+                            alert('Register thành công !')
+                        })
+                    })
                 }
             });
         });

@@ -23,7 +23,7 @@
       "quantity": "57",
       "instock": 56,
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga consequatur provident pariatur blanditiis minus deserunt facere nesciunt vitae. Repellendus hic aliquam quasi corporis delectus odit commodi labore molestias recusandae expedita!",
-      "view": 12,
+      "view": 15,
       "cateId": 2
     },
     {
@@ -36,7 +36,7 @@
       "quantity": "51",
       "instock": 51,
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga consequatur provident pariatur blanditiis minus deserunt facere nesciunt vitae. Repellendus hic aliquam quasi corporis delectus odit commodi labore molestias recusandae expedita!",
-      "view": 18,
+      "view": 20,
       "cateId": 2,
       "amount": 5
     },
@@ -49,7 +49,7 @@
       "quantity": "44",
       "instock": 56,
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga consequatur provident pariatur blanditiis minus deserunt facere nesciunt vitae. Repellendus hic aliquam quasi corporis delectus odit commodi labore molestias recusandae expedita!",
-      "view": 13,
+      "view": 15,
       "cateId": 1,
       "id": 4
     },
@@ -93,33 +93,71 @@
       "cateId": 1
     },
     {
-      "name": "Awesome Metal ",
-      "image": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-product%2Fproduct-12-1.webp?alt=media&token=b480e9e0-91b8-46f4-8af0-17dbf73db4d6",
+      "name": "Awesome Metal Metal Awesome Metal ",
+      "image": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-product%2Fproduct-12-1.webp?alt=media&token=b8327514-dfea-4ca6-a7be-8f45c16aa766",
       "price": "71.00",
       "sale": 10,
       "status": true,
       "quantity": "29",
       "instock": 29,
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga consequatur provident pariatur blanditiis minus deserunt facere nesciunt vitae. Repellendus hic aliquam quasi corporis delectus odit commodi labore molestias recusandae expedita!",
-      "view": 12,
+      "view": 39,
       "cateId": 1,
-      "id": 9
+      "id": 9,
+      "amount": 1
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "review": "hung",
+      "time": "03/03/2021",
+      "idProduct": "9",
+      "userName": "hungpv",
+      "avatar": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-customer%2Fuser.png?alt=media&token=eda90390-e7d2-4a10-9266-b4fbd6263600"
+    },
+    {
+      "id": 2,
+      "review": "hugn abc vjhdjh\n",
+      "time": "03/03/2021",
+      "idProduct": "9",
+      "userName": "hungpv",
+      "avatar": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-customer%2Fuser.png?alt=media&token=eda90390-e7d2-4a10-9266-b4fbd6263600"
+    },
+    {
+      "id": 3,
+      "review": "${LocalStorage.getUser().avatar}",
+      "time": "03/03/2021",
+      "idProduct": "9",
+      "userName": "hungpv",
+      "avatar": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-customer%2Fuser.png?alt=media&token=eda90390-e7d2-4a10-9266-b4fbd6263600"
+    },
+    {
+      "id": 4,
+      "review": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga consequatur provident pariatur blanditiis minus deserunt facere nesciunt vitae. Repellendus hic aliquam quasi corporis delectus odit commodi labore molestias recusandae expedita!",
+      "time": "03/03/2021",
+      "idProduct": "9",
+      "userName": "hungpv",
+      "avatar": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-customer%2Fuser.png?alt=media&token=eda90390-e7d2-4a10-9266-b4fbd6263600"
     }
   ],
   "categories": [
     {
+      "id": 1,
       "cateId": 1,
       "cateName": "Men",
       "image": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-categories%2Fproduct-18-1.webp?alt=media&token=9d856f0d-7664-4329-9477-422a1a7701bf",
       "short_desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
     },
     {
+      "id": 2,
       "cateId": 2,
       "cateName": "Women",
       "image": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-categories%2Fbanner-fashion-2-04.webp?alt=media&token=66c01dbc-e8e7-4def-a85b-7e900fddf74f",
       "short_desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
     },
     {
+      "id": 3,
       "cateId": 3,
       "cateName": "Accessories",
       "image": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-categories%2Fbanner-fashion-2-02.webp?alt=media&token=5c849c25-d41c-448c-96fd-2e0e1db7b6b4",
@@ -132,21 +170,35 @@
       "fullName": "phung van hung",
       "userName": "hungpv",
       "passWord": 1234567,
-      "avatar": "../../../public/images/user.png",
-      "order": [
-        {
-          "cateId": 1,
-          "quantity": 2
-        }
-      ]
+      "avatar": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-customer%2Fuser.png?alt=media&token=eda90390-e7d2-4a10-9266-b4fbd6263600"
+    },
+    {
+      "id": 2,
+      "fullName": "phung van hung",
+      "userName": "hungpv",
+      "passWord": 1234567,
+      "avatar": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-customer%2Fuser.png?alt=media&token=eda90390-e7d2-4a10-9266-b4fbd6263600"
+    },
+    {
+      "id": 3,
+      "userName": "hungpvph",
+      "avatar": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-customer%2Fuser.png?alt=media&token=cfc3c489-6eea-4edc-ac37-e65f38453cbe",
+      "fullName": "phung van hung"
+    },
+    {
+      "id": 4,
+      "userName": "hung123456",
+      "fullName": "phung van hung",
+      "passWord": "12345",
+      "avatar": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-customer%2Fuser.png?alt=media&token=c54f6337-54f8-4ee7-9b4d-acdd7d8b8939"
     }
   ],
   "order": [
     {
       "id": 1,
-      "name": "",
-      "phone": "",
-      "address": "",
+      "name": "hung",
+      "phone": "0964911301",
+      "address": "ha noi",
       "userId": 1
     }
   ],
@@ -165,7 +217,7 @@
       "sale": 10,
       "amount": "5",
       "productId": 1,
-      "orderId": 15
+      "orderId": 1
     },
     {
       "id": 24,
@@ -181,7 +233,7 @@
       "cateId": 2,
       "amount": 1,
       "productId": 2,
-      "orderId": 15
+      "orderId": 1
     }
   ],
   "blog": [
@@ -221,6 +273,30 @@
       "email": "hung",
       "subTitle": "subtitle",
       "message": "phung van hung",
+      "userId": 1
+    },
+    {
+      "id": 3,
+      "name": "hung",
+      "email": "hung",
+      "subTitle": "subtitle",
+      "message": "hung da gui message nay",
+      "userId": 1
+    },
+    {
+      "id": 4,
+      "name": "hung",
+      "email": "hung",
+      "subTitle": "subtitle",
+      "message": "123",
+      "userId": 1
+    },
+    {
+      "id": 5,
+      "name": "hung",
+      "email": "hung",
+      "subTitle": "subtitle",
+      "message": "345",
       "userId": 1
     }
   ]

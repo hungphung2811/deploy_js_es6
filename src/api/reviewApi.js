@@ -1,25 +1,25 @@
 import { axiosClient } from './axiosClient';
 
-const CategoryApi = {
+const ReviewApi = {
     getAll() {
-        const url = `/categories`;
+        const url = `/reviews`;
         return axiosClient.get(url);
-    },
-    add(category) {
-        const url = `/categories`;
-        return axiosClient.post(url, category);
     },
     get(id) {
-        const url = `/categories/${id}`;
+        const url = `/reviews/${id}`;
         return axiosClient.get(url);
     },
+    add(review) {
+        const url = `/reviews`;
+        return axiosClient.post(url, review);
+    },
     remove(id) {
-        const url = `/categories/${id}`;
+        const url = `/reviews/${id}`;
         return axiosClient.delete(url);
     },
-    update(id, category) {
-        const url = `/categories/${id}`;
-        return axiosClient.put(url, category);
+    update(id, review) {
+        const url = `/reviews/${id}`;
+        return axiosClient.put(url, review);
     },
     getItemsByOption(option) {
         const arrOption = [];
@@ -28,9 +28,9 @@ const CategoryApi = {
                 arrOption.push(`${key}=${option[key]}&`);
             }
         }
-        const url = `/categories?${arrOption.join('')}`;
+        const url = `/reviews?${arrOption.join('')}`;
         return axiosClient.get(url);
     }
 }
 
-export default CategoryApi;
+export default ReviewApi;

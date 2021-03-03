@@ -2,7 +2,7 @@ const Footer = {
     render() {
         return /*html*/ `
         <footer class="mt-8">
-            <section class="bg-red-50 py-16">
+            <section class="bg-gray-50 py-16">
                 <div class="text-center">
                     <h2 class="font-semibold font-mono text-2xl">Sign up now & get 10% off</h2>
                     <p class="text-lg text-gray-800 mt-2 font-momo">Be the first to know about our new arrivals and exclusive offers.</p>

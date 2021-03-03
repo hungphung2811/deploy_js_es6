@@ -1,6 +1,7 @@
 import CategoryApi from "../../api/categoryApi";
 import ProductApi from "../../api/productApi";
 import UserApi from "../../api/userApi";
+import AdminOrderPage from "./AdminOrderPage";
 
 const DashboardPage = {
     async render() {
@@ -11,7 +12,7 @@ const DashboardPage = {
         const { data: users } = await UserApi.getAll();
         const { data: categories } = await CategoryApi.getAll();
         return /*html*/ `
-            <div class="px-32 mt-10">
+            <div class="pl-5 pt-10 bg-gray-200">
                 <div class="flex">
                     <div class="bg-indigo-500 p-8 mr-3 shadow rounded text-white font-semibold uppercase">
                         products :
@@ -26,7 +27,14 @@ const DashboardPage = {
                     </div>
                 </div>
             </div>
+            <div class="pt-8 bg-gray-200">
+                <div class="text-xl font-semibold border-b border-gray-300 pb-3 pl-5">List order</div>
+                <div>${await AdminOrderPage.render()}</div>
+            </div>
         `
+    },
+    async afterRender(){
+        return `${await AdminOrderPage.afterRender()}`
     }
 }
 

@@ -78,6 +78,7 @@ const FormEdit = {
         const newFormEdit = $('#formBackend');
         $('#btn-save').addEventListener("click", async (e) => {
             const productImage = $('#productImageId').files[0];
+            if (!productImage) alert('Bạn cần nhập image !');
             let storageRef = firebase.storage().ref(`image-product/${productImage.name}`);
             storageRef.put(productImage).then(() => {
                 storageRef.getDownloadURL().then(async (url) => {

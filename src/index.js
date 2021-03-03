@@ -16,6 +16,8 @@ import DetailProductPage from './pages/website/DetailProductPage';
 import HomePage from './pages/website/HomePage';
 import ProductsPage from './pages/website/ProductsPage';
 import { $, backToTop, parseRequestURL, PreLoad } from './utils';
+import AdminOrderPage from './pages/admin/AdminOrderPage';
+import AdminCustomerPage from './pages/admin/AdminCustomer';
 
 const routes = {
     '/frontend': HomePage,
@@ -29,6 +31,8 @@ const routes = {
     '/backend': DashboardPage,
     '/backend/products': AdminProductsPage,
     '/backend/categories': AdminCategoriesPage,
+    '/backend/order': AdminOrderPage,
+    '/backend/customers': AdminCustomerPage,
 };
 
 const router = async () => {
