@@ -1,4 +1,4 @@
-# java_avanced_es6 
+# javascript_avanced_es6 
 
 ### Infomation
 
