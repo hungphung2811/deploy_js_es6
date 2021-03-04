@@ -32,7 +32,7 @@ const ListCheckOut = {
                                 alt="${item.name}">
                         </div>
                         <div class="ml-4">
-                            <div class="text-sm font-medium text-gray-900">
+                            <div class="text-sm font-medium text-gray-900 truncate w-44">
                                 ${item.name}
                             </div>
                         </div>

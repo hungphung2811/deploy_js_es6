@@ -5,13 +5,14 @@ const FormEditOrder = {
     async render(order) {
         const { data: orderDetail } = await OrderDetailApi.getItemsByOption({orderId:order.id});
         return /*html*/ `
-            <div class="sticky top-0 bg-white border-b-2 border-gray-200 shadow flex justify-around p-5">
+            <div class="">
+                <div class="sticky top-0 bg-white border-b-2 border-gray-200 shadow flex justify-around p-5">
                     <button class="absolute top-3.5 right-3 bg-indigo-800 px-1.5 py-1 text-lg text-white font-bold outline-none rounded shadow" id="close">&times;</button>
                     <h1 class="uppercase text-lg font-semibold">form Edit order detail</h1>
                 </div>
             <div class="mt-5 sm:mt-0">
             <form action="#">
-                <div class="shadow overflow-hidden sm:rounded-md">
+                <div class="shadow sm:rounded-md">
                 <div class="px-4 py-5 bg-white overflow-x-auto">
                     <table class="min-w-full divide-y divide-gray-200 ${orderDetail.length == 0 ? 'hidden' : ''}">
                                         <thead class="bg-gray-50">
@@ -83,6 +84,7 @@ const FormEditOrder = {
                 </div>
             </form>
         </div>
+            </div>
         `
     },
     afterRender(order) {

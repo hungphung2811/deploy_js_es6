@@ -7,7 +7,7 @@
       "price": "65.00",
       "status": true,
       "quantity": "44",
-      "instock": 29,
+      "instock": 24,
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga consequatur provident pariatur blanditiis minus deserunt facere nesciunt vitae. Repellendus hic aliquam quasi corporis delectus odit commodi labore molestias recusandae expedita!",
       "view": 15,
       "cateId": 2,
@@ -99,7 +99,7 @@
       "sale": 10,
       "status": true,
       "quantity": "29",
-      "instock": 29,
+      "instock": 28,
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga consequatur provident pariatur blanditiis minus deserunt facere nesciunt vitae. Repellendus hic aliquam quasi corporis delectus odit commodi labore molestias recusandae expedita!",
       "view": 39,
       "cateId": 1,
@@ -200,6 +200,13 @@
       "phone": "0964911301",
       "address": "ha noi",
       "userId": 1
+    },
+    {
+      "id": 2,
+      "name": "hung van phung",
+      "phone": "0964911301",
+      "address": "viet nam",
+      "userId": 1
     }
   ],
   "order_detail": [
@@ -234,6 +241,38 @@
       "amount": 1,
       "productId": 2,
       "orderId": 1
+    },
+    {
+      "id": 25,
+      "name": "Refined Steel Shoes",
+      "image": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-product%2Fproduct-05-1.webp?alt=media&token=c8a34223-435c-4d0a-aaf7-eeb739027c2e",
+      "price": "65.00",
+      "status": true,
+      "quantity": "44",
+      "instock": 34,
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga consequatur provident pariatur blanditiis minus deserunt facere nesciunt vitae. Repellendus hic aliquam quasi corporis delectus odit commodi labore molestias recusandae expedita!",
+      "view": 15,
+      "cateId": 2,
+      "sale": 10,
+      "amount": 5,
+      "productId": 1,
+      "orderId": 2
+    },
+    {
+      "name": "Awesome Metal Metal Awesome Metal ",
+      "image": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-product%2Fproduct-12-1.webp?alt=media&token=b8327514-dfea-4ca6-a7be-8f45c16aa766",
+      "price": "71.00",
+      "sale": 10,
+      "status": true,
+      "quantity": "29",
+      "instock": 29,
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga consequatur provident pariatur blanditiis minus deserunt facere nesciunt vitae. Repellendus hic aliquam quasi corporis delectus odit commodi labore molestias recusandae expedita!",
+      "view": 38,
+      "cateId": 1,
+      "id": 26,
+      "amount": 1,
+      "productId": 9,
+      "orderId": 2
     }
   ],
   "blog": [
@@ -297,6 +336,30 @@
       "email": "hung",
       "subTitle": "subtitle",
       "message": "345",
+      "userId": 1
+    },
+    {
+      "id": 6,
+      "name": "",
+      "email": "",
+      "subTitle": "",
+      "message": "",
+      "userId": 1
+    },
+    {
+      "id": 7,
+      "name": "hung",
+      "email": "hung@gmailcom.com",
+      "subTitle": "gn",
+      "message": "hung da co message",
+      "userId": 1
+    },
+    {
+      "id": 8,
+      "name": "hung",
+      "email": "hung@gmailcom.com",
+      "subTitle": "subtitle",
+      "message": "12345",
       "userId": 1
     }
   ]

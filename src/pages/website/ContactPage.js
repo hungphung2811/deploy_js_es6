@@ -135,9 +135,13 @@ const ContactPage = {
                 <div class="w-full mt-8">
                     <form id="fomrContactId">
                         <input id="nameContactId" type="text" class="w-full my-2 py-3 pl-2 border-gray-300 text-xs text-gray-700" placeholder="Name *">
+                        <span class="flex text-xs text-red-500 mb-1" id="nameContactErrorID"></span>
                         <input id="emailContactId" type="text" class="w-full my-2 py-3 pl-2 border-gray-300 text-xs text-gray-700" placeholder="Email *">
+                        <span class="flex text-xs text-red-500 mb-1" id="emailContactErrorID"></span>
                         <input id="subTitleContactId" type="text" class="w-full my-2 py-3 pl-2 border-gray-300 text-xs text-gray-700" placeholder="Subtitle">
+                        <span class="flex text-xs text-red-500 mb-1" id="subTitleContactErrorID"></span>
                         <textarea id="messageContactId" class="w-full my-2 py-3 pl-2 border-gray-300 text-xs text-gray-700" rows="5" placeholder="Message"></textarea>
+                        <span class="flex text-xs text-red-500 mb-1" id="messageContactErrorID"></span>
                         <button class="bg-black py-1.5 px-5 mt-3 text-white text-sm font-semibold">Post</button>
                     </form>
                 </div>
@@ -155,15 +159,54 @@ const ContactPage = {
                 alert('Bạn cần đăng nhập !');
                 return;
             }
+            let nameContactElement = $('#nameContactId');
+            let emailContactElement = $('#emailContactId');
+            let subTitleContactElement = $('#subTitleContactId');
+            let messageContactElement = $('#messageContactId');
+            if (!nameContactElement.value) {
+                $('#nameContactErrorID').innerText = 'bạn cần nhập trường name!';
+                return;
+            } else {
+                $('#nameContactErrorID').innerText = '';
+            }
+            if (!emailContactElement.value) {
+                $('#emailContactErrorID').innerText = 'bạn cần nhập trường eamil!';
+                return;
+            } else {
+                $('#emailContactErrorID').innerText = '';
+            }
+            let reg = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            let result = reg.test(emailContactElement.value);
+            if (!result) {
+                $('#emailContactErrorID').innerText = 'bạn cần nhập eamil thực!';
+                return;
+            } else {
+                $('#emailContactErrorID').innerText = '';
+            }
+
+            if (!subTitleContactElement.value) {
+                $('#subTitleContactErrorID').innerText = 'bạn cần nhập trường sub title!';
+                return;
+            } else {
+                $('#subTitleContactErrorID').innerText = '';
+            }
+
+            if (!messageContactElement.value) {
+                $('#messageContactErrorID').innerText = 'bạn cần nhập trường message!';
+                return;
+            } else {
+                $('#messageContactErrorID').innerText = '';
+            }
             const contact = {
                 id: '',
-                name: $('#nameContactId').value,
-                email: $('#emailContactId').value,
-                subTitle: $('#subTitleContactId').value,
-                message: $('#messageContactId').value,
+                name: nameContactElement.value,
+                email: emailContactElement.value,
+                subTitle: subTitleContactElement.value,
+                message: messageContactElement.value,
                 userId: user.id
             }
             await ContactApi.add(contact);
+            $('#fomrContactId').reset();
             alert('cảm ơn bạn đã Liên hệ với chúng tôi !');
         })
     }

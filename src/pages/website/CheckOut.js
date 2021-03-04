@@ -52,14 +52,17 @@ const CheckOut = {
                         <div class=" mt-2">
                             <label class="ml-1 text-sm font-semibold" for="">Name *</label>
                             <input id="nameOrderId" type="text" class="w-full my-2 py-3 pl-2 border-gray-300 text-xs text-gray-700" placeholder="Name *">
+                            <span class="flex text-xs text-red-500" id="nameOrderErrorId"></span>
                         </div>
                         <div class=" mt-2">
                             <label class="ml-1 text-sm font-semibold" for="">Phone Number *</label>
                             <input id="phoneOrderId" type="text" class="w-full my-2 py-3 pl-2 border-gray-300 text-xs text-gray-700" placeholder="Phone *">
+                            <span class="flex text-xs text-red-500" id="phoneOrderErrorId"></span>
                         </div>
                         <div class=" mt-2">
                             <label class="ml-1 text-sm font-semibold" for="">Address *</label>
                             <textarea id="addressOrderId" class="w-full my-2 py-3 pl-2 border-gray-300 text-xs text-gray-700" rows="3" placeholder="Address *"></textarea>
+                            <span class="flex text-xs text-red-500" id="addressOrderErrorId"></span>
                         </div>
                 </div>
                 <div class="py-3">
@@ -137,16 +140,48 @@ const CheckOut = {
         await ListCheckOut.afterRender() + (function () {
             if (!$('#btnCheckoutId')) return;
             $('#btnCheckoutId').onclick = async () => {
+                const carts = LocalStorage.getCart();
+                const user = LocalStorage.getUser();
+                let nameOrderElement = $('#nameOrderId');
+                let phoneOrderElement = $('#phoneOrderId');
+                let addressOrderElement = $('#addressOrderId');
+                if (!nameOrderElement.value.trim()) {
+                    $('#nameOrderErrorId').innerText = 'bạn cần nhập trường name';
+                    return;
+                } else {
+                    $('#nameOrderErrorId').innerText = ''
+                }
+
+                if (!phoneOrderElement.value.trim()) {
+                    $('#phoneOrderErrorId').innerText = 'bạn cần nhập trường phone';
+                    return;
+                } else {
+                    $('#phoneOrderErrorId').innerText = ''
+                }
+                let reg = /((09|03|07|08|05)+([0-9]{8})\b)/g;
+                let result = reg.test(phoneOrderElement.value);
+                if (!result) {
+                    $('#phoneOrderErrorId').innerText = 'phone phải là số và có độ dài là 10';
+                    return;
+                } else {
+                    $('#phoneOrderErrorId').innerText = '';
+                }
+
+                if (!addressOrderElement.value.trim()) {
+                    $('#addressOrderErrorId').innerText = 'bạn cần nhập trường address';
+                    return;
+                } else {
+                    $('#addressOrderErrorId').innerText = ''
+                }
+                const costomer = {
+                    id: '',
+                    name: nameOrderElement.value,
+                    phone: phoneOrderElement.value,
+                    address: addressOrderElement.value,
+                    userId: user.id
+                }
+
                 try {
-                    const carts = LocalStorage.getCart();
-                    const user = LocalStorage.getUser();
-                    const costomer = {
-                        id: '',
-                        name: $('#nameOrderId').value,
-                        phone: $('#phoneOrderId').value,
-                        address: $('#addressOrderId').value,
-                        userId: user.id
-                    }
                     let { data: lastestOrder } = await OrderApi.add(costomer);
                     carts.forEach(async cart => {
                         const newCart = { ...cart, productId: cart.id }
@@ -157,7 +192,7 @@ const CheckOut = {
                         const newProduct = { ...product, instock: newInstock }
                         await ProductApi.update(orderDetail.productId, newProduct);
                     })
-                    alert('order thành công !');
+                    alert('order thành công . Cảm ơn bạn đã mua hàng!');
                 } catch (error) {
                     console.log(error);
                     alert('Đã có lỗi xảy ra vui lòng thử lại !');

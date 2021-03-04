@@ -15,7 +15,7 @@ const AdminOrderPage = {
                     </div>
                 </div>
                 <div id="pop-up__container" class="pop-up__container">
-                    <div class="pop-up overflow-auto h-5/6 shadow-lg rounded">
+                    <div class="pop-up overflow-auto h-auto shadow-lg rounded">
                         <div class="relative" id="formBackend">
 
                         </div>
