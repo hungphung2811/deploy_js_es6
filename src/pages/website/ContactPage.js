@@ -1,6 +1,8 @@
 import ContactApi from '../../api/contactApi';
 import LocalStorage from '../../localStorage/LocalStorage';
 import { $ } from '../../utils';
+import { setErrorFor, setSuccessFor } from '../../validate/setStatusValidate';
+import { isEmail, isRequired } from '../../validate/validate';
 const ContactPage = {
     render() {
         return /*html*/ `
@@ -140,9 +142,9 @@ const ContactPage = {
                         <span class="flex text-xs text-red-500 mb-1" id="emailContactErrorID"></span>
                         <input id="subTitleContactId" type="text" class="w-full my-2 py-3 pl-2 border-gray-300 text-xs text-gray-700" placeholder="Subtitle">
                         <span class="flex text-xs text-red-500 mb-1" id="subTitleContactErrorID"></span>
-                        <textarea id="messageContactId" class="w-full my-2 py-3 pl-2 border-gray-300 text-xs text-gray-700" rows="5" placeholder="Message"></textarea>
+                        <textarea id="messageContactId" class="w-full my-2 py-3 pl-2 border-gray-300 text-xs text-gray-700" rows="5" placeholder="Message*"></textarea>
                         <span class="flex text-xs text-red-500 mb-1" id="messageContactErrorID"></span>
-                        <button class="bg-black py-1.5 px-5 mt-3 text-white text-sm font-semibold">Post</button>
+                        <button class="bg-black py-1.5 px-5 mt-3 text-white text-sm font-semibold hover:bg-yellow-600">Post</button>
                     </form>
                 </div>
             </div>
@@ -163,40 +165,13 @@ const ContactPage = {
             let emailContactElement = $('#emailContactId');
             let subTitleContactElement = $('#subTitleContactId');
             let messageContactElement = $('#messageContactId');
-            if (!nameContactElement.value) {
-                $('#nameContactErrorID').innerText = 'bạn cần nhập trường name!';
-                return;
-            } else {
-                $('#nameContactErrorID').innerText = '';
-            }
-            if (!emailContactElement.value) {
-                $('#emailContactErrorID').innerText = 'bạn cần nhập trường eamil!';
-                return;
-            } else {
-                $('#emailContactErrorID').innerText = '';
-            }
-            let reg = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-            let result = reg.test(emailContactElement.value);
-            if (!result) {
-                $('#emailContactErrorID').innerText = 'bạn cần nhập eamil thực!';
-                return;
-            } else {
-                $('#emailContactErrorID').innerText = '';
-            }
 
-            if (!subTitleContactElement.value) {
-                $('#subTitleContactErrorID').innerText = 'bạn cần nhập trường sub title!';
-                return;
-            } else {
-                $('#subTitleContactErrorID').innerText = '';
-            }
+            isRequired(nameContactElement, messageContactElement);
+            const statusEmail = isEmail(emailContactElement);
 
-            if (!messageContactElement.value) {
-                $('#messageContactErrorID').innerText = 'bạn cần nhập trường message!';
-                return;
-            } else {
-                $('#messageContactErrorID').innerText = '';
-            }
+            if (!(nameContactElement.value && emailContactElement.value
+                && messageContactElement.value && statusEmail)) return;
+
             const contact = {
                 id: '',
                 name: nameContactElement.value,

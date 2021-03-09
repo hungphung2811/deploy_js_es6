@@ -3,7 +3,7 @@ import { $, reRender } from '../../../utils'
 import FormEdit from "./FormEdit";
 const ListProducts = {
     async render() {
-        const { data: products } = await ProductApi.getAll();
+        const { data: products } = await ProductApi.getItemsByOption({_sort:'id',_order:'desc'});
         return /*html*/`
                     <table class="min-w-full divide-y divide-gray-200 ${products.length == 0 ? 'hidden' : ''}">
                                         <thead class="bg-gray-50">
@@ -18,7 +18,12 @@ const ListProducts = {
                                                 </th>
                                                 <th scope="col"
                                                     class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
+                                                    <div>
                                                     price
+                                                    </div>
+                                                    <div class="text-xs text-gray-500 block capitalize">
+                                                    sale
+                                                    </div>
                                                 </th>
                                                 <th scope="col"
                                                     class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
@@ -59,7 +64,10 @@ const ListProducts = {
                         </div>
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap">
-                        ${product.price}
+                        ${parseFloat(product.price).toFixed(2)} 
+                        <div class="text-xs block text-red-500">
+                            ${parseFloat(product.sale)} %
+                        </div>
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap">
                         <span
@@ -104,7 +112,7 @@ const ListProducts = {
         const newFormEdit = $('#formBackend');
         const btns = $('.btn');
 
-        if (!(popUpContainer && close && newFormEdit && btns)) return;
+        if (!(popUpContainer && newFormEdit && btns)) return;
 
         btns.forEach(btn => {
             btn.addEventListener('click', async () => {

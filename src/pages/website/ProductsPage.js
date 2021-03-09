@@ -4,12 +4,10 @@ import { $ } from '../../utils';
 
 const ProductsPage = {
     async render(products) {
-        console.log(products);
         if (!products || products.length === 0) {
             let data = await ProductApi.getAll();
             products = data.data;
         }
-        console.log(products);
         return /*html*/`
             <div class="container mx-auto lg:px-32 bg-gray-100 py-3">
                 <ul>
@@ -63,7 +61,7 @@ const ProductsPage = {
                                                     </div>
                                                 </a>
                                                 <div class="px-3 pb-3 border-t border-gray-400 border-opacity-90 mt-1">
-                                                    <h3 class="text-sm mt-2 group-hover:opacity-0 group-hover:invisible transition-all duration-300">
+                                                    <h3 class="truncate text-sm mt-2 group-hover:opacity-0 group-hover:invisible transition-all duration-300">
                                                         <a href="/#//product/${product.id}">
                                                             ${product.name}
                                                         </a>

@@ -21,7 +21,8 @@ const DetailProductPage = {
         const category = await subNavigation(product.cateId);
         const { data: top4ProductRelated } = await ProductApi.getItemsByOption({ _limit: 4, cateId: product.cateId })
         const { data: infoReviews } = await ReviewApi.getItemsByOption({ idProduct: id });
-        
+        let price = parseFloat(product.price).toFixed(2);
+        let sale = parseFloat(product.sale).toFixed(2);
         return /*html*/`
             <div class="container mx-auto lg:px-32 bg-gray-100 py-5">
                 <ul>
@@ -38,12 +39,12 @@ const DetailProductPage = {
                     <div class="col-span-5">
                         <div class="bg-gray-100 border boder-gray-200">
                             <img src="${product.image}"
-                                alt="">
+                                alt="${product.name}">
                         </div>
                         <div class="grid grid-cols-4 mt-2 gap-2">
                             <div class="bg-gray-100 border boder-gray-200">
                                 <img src="${product.image}"
-                                    alt="">
+                                    alt="${product.name}">
                             </div>
                             <div class="bg-gray-100 border boder-gray-200">
                                 <img src="${product.image}"
@@ -72,17 +73,17 @@ const DetailProductPage = {
                                     <li class="inline-block"><i class="fas fa-star"></i></li>
                                     <li class="inline-block"><i class="fas fa-star"></i></li>
                                 </ul>
-                                <span class="inline-block text-xs">(${product.view} reviews)</span>
+                                <span class="inline-block text-xs">(${product.view} views)</span>
                             </div>
                         </div>
 
                         <div class="flex items-center justify-start">
                             <div class="text-3xl">
-                                <span>$${product.price - (product.price * product.sale / 100)}</span>
+                                <span>$ ${(price - (price * sale / 100)).toFixed(2)}</span>
                             </div>
-                            <div class="ml-5">
-                                <p class="line-through text-indigo-400 text-opacity-70"><span class="text-red-500">$ ${product.price}</span></p>
-                                <p class="text-red-500 text-xs">You save: $ ${product.price * product.sale / 100} (${product.sale}%)</p>
+                            <div class="ml-5 ${sale <= 0 ? 'hidden' : ''}">
+                                <p class="line-through text-indigo-400 text-opacity-70"><span class="text-red-500">$ ${price}</span></p>
+                                <p class="text-red-500 text-xs">You save: $ ${price * sale / 100} (${sale}%)</p>
                             </div>
                         </div>
                         
@@ -206,6 +207,7 @@ const DetailProductPage = {
                 </div>
                 <div class="grid grid-cols-4 gap-4">
                                 ${top4ProductRelated.map(product => {
+            let price = parseFloat(product.price).toFixed(2);
             return /*html*/`
                                         <div class="bg-gray-50 h-auto relative group">
                                             <div>
@@ -221,8 +223,8 @@ const DetailProductPage = {
                                                         </a>
                                                     </h3>
                                                     <div class="mt-0.5 flex items-center">
-                                                        <p class="text-xs line-through mr-3">$ ${product.price - product.price * product.sale / 100}</p>
-                                                        <p class="text-sm font-semibold">$ ${product.price}</p>
+                                                        <p class="text-xs line-through mr-3">$ ${price - price * product.sale / 100}</p>
+                                                        <p class="text-sm font-semibold">$ ${price}</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -269,9 +271,9 @@ const DetailProductPage = {
             if (!LocalStorage.getUser() || LocalStorage.getUser().length == 0) {
                 alert('ban can dang nhap')
             }
-            const review = $('#formPostReivewId').querySelector('textarea').value;
+            let review = $('#formPostReivewId').querySelector('textarea').value;
             const date = new Date();
-            let time = `${date.getDay() < 10 ? `0${date.getDay()}` : date.getDay()}/${date.getDate() < 10 ? `0${date.getDate()}` : date.getDate()}/${date.getFullYear()}`
+            let time = `${date.getDay() < 10 ? `0${date.getDay()}` : date.getDay()}/${date.getMonth() + 1 < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1}/${date.getFullYear()}`
             const { id } = parseRequestURL();
             const newReview = {
                 id: '',
@@ -282,24 +284,25 @@ const DetailProductPage = {
                 avatar: LocalStorage.getUser().avatar
             }
             const { data: tempReview } = await ReviewApi.add(newReview);
-            console.log(tempReview);
             let div = document.createElement('div');
-            div.classList.add('flex', 'mt-5');
             div.innerHTML = /*html */ `
-                <div class="mt-2">
-                    <img  class="w-20" src="${LocalStorage.getUser().avatar}" alt="${LocalStorage.getUser().uerName}">
-                </div>
-                <div class="ml-5">
-                    <div>
-                        <span class="text-lg font-semibold">phung van hung</span>
-                        <span class="ml-3 text-xs text-gray-500">${tempReview.time}</span>
+                <div class="grid grid-cols-8 gap-4 border-b border-gray-200 pb-3 mt-3">
+                    <div class="mt-2 col-span-1">
+                        <img src="${LocalStorage.getUser().avatar}" class="w-20" alt="${LocalStorage.getUser().userName}">
                     </div>
-                    <p class="text-sm text-gray-600">
-                        ${tempReview.review}
-                    </p>
+                    <div class="col-span-7">
+                        <div>
+                            <span class="text-lg font-semibold">${LocalStorage.getUser().userName}</span>
+                            <span class="ml-3 text-xs text-gray-500">${tempReview.time}</span>
+                        </div>
+                        <p class="text-sm text-gray-600">
+                            ${tempReview.review}
+                        </p>
+                    </div>
                 </div>
             `
             $('#listReviewId').appendChild(div);
+            review = '';
         });
     }
 }

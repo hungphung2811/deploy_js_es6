@@ -22,14 +22,8 @@ const AdminProductsPage = {
                     </div>
                 </div>
                 <div id="pop-up__container" class="pop-up__container">
-                    <div class="pop-up overflow-auto h-5/6 relative shadow-lg rounded">
-                        <div class="sticky top-0 bg-white border-b-2 border-gray-200 shadow flex justify-around p-5">
-                            <button class="absolute top-3.5 right-3 bg-indigo-800 px-1.5 py-1 text-lg text-white font-bold outline-none rounded shadow" id="close">&times;</button>
-                            <h1 class="uppercase text-lg font-semibold">heading pop up</h1>
-                        </div>
-                        <div class="p-5" id="formBackend">
-                            
-                        </div>
+                    <div class="pop-up overflow-auto h-5/6 relative shadow-lg rounded" id="formBackend">
+                        
                     </div>
                 </div>
         `;

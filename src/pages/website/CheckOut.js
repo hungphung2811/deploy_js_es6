@@ -5,6 +5,7 @@ import { CheckLogin } from "../../components/auth/checkLogin";
 import ListCheckOut from "../../components/website/cart/ListCheckOut";
 import LocalStorage from "../../localStorage/LocalStorage";
 import { $ } from "../../utils";
+import { isRequired,isPhoneNumber } from "../../validate/validate";
 
 const CheckOut = {
     async render() {
@@ -145,33 +146,11 @@ const CheckOut = {
                 let nameOrderElement = $('#nameOrderId');
                 let phoneOrderElement = $('#phoneOrderId');
                 let addressOrderElement = $('#addressOrderId');
-                if (!nameOrderElement.value.trim()) {
-                    $('#nameOrderErrorId').innerText = 'bạn cần nhập trường name';
-                    return;
-                } else {
-                    $('#nameOrderErrorId').innerText = ''
-                }
 
-                if (!phoneOrderElement.value.trim()) {
-                    $('#phoneOrderErrorId').innerText = 'bạn cần nhập trường phone';
+                isRequired(nameOrderElement, phoneOrderElement, addressOrderElement);
+                const statusPhoneOrder = isPhoneNumber(phoneOrderElement);
+                if (!(statusPhoneOrder && nameOrderElement.value && phoneOrderElement.value && addressOrderElement.value)) {
                     return;
-                } else {
-                    $('#phoneOrderErrorId').innerText = ''
-                }
-                let reg = /((09|03|07|08|05)+([0-9]{8})\b)/g;
-                let result = reg.test(phoneOrderElement.value);
-                if (!result) {
-                    $('#phoneOrderErrorId').innerText = 'phone phải là số và có độ dài là 10';
-                    return;
-                } else {
-                    $('#phoneOrderErrorId').innerText = '';
-                }
-
-                if (!addressOrderElement.value.trim()) {
-                    $('#addressOrderErrorId').innerText = 'bạn cần nhập trường address';
-                    return;
-                } else {
-                    $('#addressOrderErrorId').innerText = ''
                 }
                 const costomer = {
                     id: '',

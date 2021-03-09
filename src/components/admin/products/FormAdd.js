@@ -3,20 +3,26 @@ import ProductApi from "../../../api/productApi";
 import { $, reRender } from '../../../utils';
 import ListProducts from "./ListProducts";
 import firebase from "../../../firebase"
+import { isNumber, isRequired } from "../../../validate/validate";
 
 const FormAdd = {
     async render() {
         const { data: categories } = await CategoryApi.getAll();
-        return /*html*/ `
-            <div class="mt-5 sm:mt-0">
+        return /*html*/ `<div class="sticky top-0 bg-white border-b-2 border-gray-200 shadow flex justify-around p-5">
+                            <button class="absolute top-3.5 right-3 bg-indigo-800 px-1.5 py-1 text-lg text-white font-bold outline-none rounded shadow" id="close">&times;</button>
+                            <h1 class="uppercase text-lg font-semibold">Form add product</h1>
+                        </div>
+                        <div class="p-5">
+                            <div class="mt-5 sm:mt-0">
             <form id="formAddId">
                 <div class="shadow overflow-hidden sm:rounded-md">
                 <div class="px-4 py-5 bg-white">
                         <div class="grid grid-cols-6 gap-4">
 
                             <div class="col-span-6 sm:col-span-6">
-                                <label class=" text-sm font-medium text-gray-700">Name</label>
-                                <input type="text" id="product-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500  w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                <label class=" text-sm font-medium text-gray-700">Name*</label>
+                                <input type="text" id="product-name" placeholder="name*" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500  w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                <small class="text-xs text-red-500 font-semibold"></small>
                             </div>
 
                             <div class="col-span-6 sm:col-span-3">
@@ -31,23 +37,27 @@ const FormAdd = {
                             </div>
 
                             <div class="col-span-6 sm:col-span-6 lg:col-span-3">
-                                <label class=" text-sm font-medium text-gray-700">Quantity</label>
-                                <input type="text" id="quantity" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500  w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                <label class=" text-sm font-medium text-gray-700">Quantity*</label>
+                                <input type="number" id="quantity" placeholder="Quantity*" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500  w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                <small class="text-xs text-red-500 font-semibold"></small>
                             </div>
 
                             <div class="col-span-6 sm:col-span-3 lg:col-span-3">
-                                <label class=" text-sm font-medium text-gray-700">Price</label>
-                                <input type="text" id="price" value="0" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500  w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                <label class=" text-sm font-medium text-gray-700">Price*</label>
+                                <input type="number" id="price" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500  w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                <small class="text-xs text-red-500 font-semibold"></small>
                             </div>
 
                             <div class="col-span-6 sm:col-span-3 lg:col-span-3">
                                 <label class=" text-sm font-medium text-gray-700">Sales</label>
-                                <input type="text" value="0" name="postal_code" id="sales" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500  w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                <input type="number" value="0" id="sales" placeholder="sales" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500  w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                <small class="text-xs text-red-500 font-semibold"></small>
                             </div>
 
                             <div class="col-span-6 sm:col-span-3 lg:col-span-3">
-                                <label class=" text-sm font-medium text-gray-700">Image</label>
-                                <input type="file" id="productImageId" class="mt-1  w-full shadow-sm sm:text-sm">
+                                <label class=" text-sm font-medium text-gray-700">Image*</label>
+                                <input type="file" id="productImageId" class="mt-1 px-1.5 py-0.5 w-full shadow-sm sm:text-sm">
+                                <small class="text-xs text-red-500 font-semibold"></small>
                             </div>
 
                             <div class="col-span-6 sm:col-span-3 lg:col-span-3">
@@ -56,10 +66,11 @@ const FormAdd = {
 
                             <div class="col-span-6 sm:col-span-6">
                                 <label class="block text-sm font-medium text-gray-700">
-                                Description
+                                Description*
                                 </label>
                                 <div class="mt-1">
-                                <textarea rows="3" id="description" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="you@example.com"></textarea>
+                                <textarea rows="3" id="description" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="description*"></textarea>
+                                <small class="text-xs text-red-500 font-semibold"></small>
                                 </div>
                             </div>
                         </div>
@@ -72,28 +83,64 @@ const FormAdd = {
                 </div>
             </form>
         </div>
+                        </div>
+            
         `
     },
     afterRender() {
+        const close = $('#close');
+        const popUpContainer = $('.pop-up__container');
         const newFormEdit = $('#formBackend');
         if (!newFormEdit) return;
+        if (close) {
+            close.addEventListener('click', (event) => {
+                event.stopPropagation();
+                popUpContainer.classList.remove('active');
+            });
+        }
 
         $('#formAddId').addEventListener("submit", async (e) => {
             e.preventDefault();
             const productImage = $('#productImageId').files[0];
+            const nameProductElement = newFormEdit.querySelector('input#product-name');
+            const priceProductElement = newFormEdit.querySelector('input#price');
+            const salesProductElement = newFormEdit.querySelector('input#sales');
+            const quantityProductElement = newFormEdit.querySelector('input#quantity');
+            const descriptionProductElement = newFormEdit.querySelector('textarea#description');
+
+            isRequired(nameProductElement, priceProductElement
+                , quantityProductElement, descriptionProductElement);
+            const statusPrice = isNumber(priceProductElement);
+            const statusQuantity = isNumber(quantityProductElement);
+
+            if (!productImage) {
+                $('#productImageId').classList.remove('border-2', 'border-green-400');
+                $('#productImageId').classList.add('border-2', 'border-red-400');
+                $('#productImageId').nextElementSibling.innerText = 'ban cần nhập ảnh !';
+            } else {
+                $('#productImageId').classList.remove('border-2', 'border-red-400');
+                $('#productImageId').classList.add('border-2', 'border-green-400');
+                $('#productImageId').nextElementSibling.innerText = '';
+            }
+
+            if (!(productImage && nameProductElement.value && priceProductElement.value
+                && quantityProductElement.value && descriptionProductElement.value
+                && statusPrice && statusQuantity)) return;
+
             let storageRef = firebase.storage().ref(`image-product/${productImage.name}`);
             storageRef.put(productImage).then(() => {
                 storageRef.getDownloadURL().then(async (url) => {
                     $('#productImagePreviewId').src = url;
                     const newProduct = {
                         id: '',
-                        name: newFormEdit.querySelector('input#product-name').value,
+                        name: nameProductElement.value,
                         image: url,
-                        price: newFormEdit.querySelector('input#price').value,
+                        price: priceProductElement.value,
+                        sale: salesProductElement.value,
                         status: true,
-                        quantity: newFormEdit.querySelector('input#quantity').value,
-                        instock: newFormEdit.querySelector('input#quantity').value,
-                        description: newFormEdit.querySelector('#description').value,
+                        quantity: quantityProductElement.value,
+                        instock: quantityProductElement.value,
+                        description: descriptionProductElement.value,
                         view: 0,
                         cateId: +newFormEdit.querySelector('#cateId').value
                     }

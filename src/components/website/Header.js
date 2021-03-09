@@ -253,7 +253,7 @@ const Header = {
             `
         }
     },
-    onCloseForm() {
+    onHandleCloseForm() {
         $('.close-form').forEach(btn => {
             btn.onclick = () => {
                 this.closeForm();
@@ -268,7 +268,7 @@ const Header = {
     async setUpUser() {
         const user = LocalStorage.getUser();
         if (user) this.setValuesUser(user);
-        this.onCloseForm();
+        this.onHandleCloseForm();
         this.logOut();
     },
     logOut() {

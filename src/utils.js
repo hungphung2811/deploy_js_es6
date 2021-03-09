@@ -59,7 +59,7 @@ const reRender = async (component, position = '') => {
 
 const increamenView = async (product) => {
     const tempProduct = { ...product };
-    const view = tempProduct.view + 1;
+    const view = parseInt(tempProduct.view) + 1;
     const newProduct = { ...tempProduct, view };
 
     await productApi.update(tempProduct.id, newProduct);

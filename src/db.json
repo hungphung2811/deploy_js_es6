@@ -2,28 +2,28 @@
   "products": [
     {
       "id": 1,
-      "name": "Refined Steel Shoes",
-      "image": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-product%2Fproduct-05-1.webp?alt=media&token=c8a34223-435c-4d0a-aaf7-eeb739027c2e",
+      "name": "Refined Steel Shoes1",
+      "image": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-product%2Fproduct-06-1.webp?alt=media&token=b1a96cdb-b2ce-463e-a04d-0afc6f8eb8fa",
       "price": "65.00",
+      "sale": "0",
       "status": true,
       "quantity": "44",
-      "instock": 24,
+      "instock": 36,
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga consequatur provident pariatur blanditiis minus deserunt facere nesciunt vitae. Repellendus hic aliquam quasi corporis delectus odit commodi labore molestias recusandae expedita!",
-      "view": 15,
-      "cateId": 2,
-      "sale": 10
+      "view": "117",
+      "cateId": 2
     },
     {
       "id": 2,
       "name": "Tasty Concrete Chips",
       "image": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-product%2Fproduct-07-1.webp?alt=media&token=ab743c9f-f7da-40ae-8a0a-1d5c6bb072d0",
       "price": "62.00",
-      "sale": 10,
+      "sale": "0",
       "status": true,
       "quantity": "57",
-      "instock": 56,
+      "instock": "56",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga consequatur provident pariatur blanditiis minus deserunt facere nesciunt vitae. Repellendus hic aliquam quasi corporis delectus odit commodi labore molestias recusandae expedita!",
-      "view": 15,
+      "view": 9,
       "cateId": 2
     },
     {
@@ -31,14 +31,13 @@
       "name": "Awesome Soft Fish",
       "image": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-product%2Fproduct-06-1.webp?alt=media&token=3f0d605d-9590-4862-b2a0-51235130d137",
       "price": "63.00",
-      "sale": 10,
+      "sale": "0",
       "status": true,
       "quantity": "51",
-      "instock": 51,
+      "instock": "51",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga consequatur provident pariatur blanditiis minus deserunt facere nesciunt vitae. Repellendus hic aliquam quasi corporis delectus odit commodi labore molestias recusandae expedita!",
-      "view": 20,
-      "cateId": 2,
-      "amount": 5
+      "view": "20",
+      "cateId": 2
     },
     {
       "name": "Refined Steel Shoes12",
@@ -49,7 +48,7 @@
       "quantity": "44",
       "instock": 56,
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga consequatur provident pariatur blanditiis minus deserunt facere nesciunt vitae. Repellendus hic aliquam quasi corporis delectus odit commodi labore molestias recusandae expedita!",
-      "view": 15,
+      "view": 32,
       "cateId": 1,
       "id": 4
     },
@@ -61,9 +60,9 @@
       "sale": 10,
       "status": true,
       "quantity": "73",
-      "instock": 63,
+      "instock": 61,
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga consequatur provident pariatur blanditiis minus deserunt facere nesciunt vitae. Repellendus hic aliquam quasi corporis delectus odit commodi labore molestias recusandae expedita!",
-      "view": 12,
+      "view": 13,
       "cateId": 2
     },
     {
@@ -71,12 +70,12 @@
       "name": "Tasty Fresh Pizza",
       "image": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-product%2Fproduct-18-1.webp?alt=media&token=b166af21-ca1b-4f39-abb2-ede1ff46b31c",
       "price": "75.00",
-      "sale": 10,
+      "sale": "0",
       "status": true,
       "quantity": "61",
-      "instock": 60,
+      "instock": "60",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga consequatur provident pariatur blanditiis minus deserunt facere nesciunt vitae. Repellendus hic aliquam quasi corporis delectus odit commodi labore molestias recusandae expedita!",
-      "view": 12,
+      "view": "12",
       "cateId": 1
     },
     {
@@ -101,10 +100,62 @@
       "quantity": "29",
       "instock": 28,
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga consequatur provident pariatur blanditiis minus deserunt facere nesciunt vitae. Repellendus hic aliquam quasi corporis delectus odit commodi labore molestias recusandae expedita!",
-      "view": 39,
+      "view": 40,
       "cateId": 1,
-      "id": 9,
-      "amount": 1
+      "id": 9
+    },
+    {
+      "id": 10,
+      "name": "Refined Steel Shoes",
+      "image": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-product%2Fproduct-06-1.webp?alt=media&token=b32aa821-f54e-4584-9ce5-80e276aad190",
+      "price": "23",
+      "sale": "0",
+      "status": true,
+      "quantity": "34",
+      "instock": "34",
+      "description": "day la san pham nu",
+      "view": 15,
+      "cateId": 2,
+      "amount": 2
+    },
+    {
+      "id": 11,
+      "name": "Refined Steel Shoes",
+      "image": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-product%2Fproduct-18-1.webp?alt=media&token=cfd8ee4f-4fbe-4fc0-83a0-e72e0f4ff19c",
+      "price": "65.00",
+      "sale": "0",
+      "status": true,
+      "quantity": "12",
+      "instock": "12",
+      "description": "hung da ghi description",
+      "view": 24,
+      "cateId": 3
+    },
+    {
+      "id": 12,
+      "name": "Refined Steel Shoes",
+      "image": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-product%2Fproduct-18-1.webp?alt=media&token=0a523d4f-1811-45d0-a73a-abbbdba2b299",
+      "price": "65.00",
+      "sale": "3",
+      "status": true,
+      "quantity": "12",
+      "instock": "12",
+      "description": "hung",
+      "view": 0,
+      "cateId": 3
+    },
+    {
+      "id": 13,
+      "name": "Refined Steel Shoes12",
+      "image": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-product%2Fproduct-18-1.webp?alt=media&token=80245103-6dd9-4655-8645-b0b57caf938f",
+      "price": "65.00",
+      "sale": "3",
+      "status": true,
+      "quantity": "12",
+      "instock": "12",
+      "description": "hung",
+      "view": 0,
+      "cateId": 3
     }
   ],
   "reviews": [
@@ -139,6 +190,134 @@
       "idProduct": "9",
       "userName": "hungpv",
       "avatar": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-customer%2Fuser.png?alt=media&token=eda90390-e7d2-4a10-9266-b4fbd6263600"
+    },
+    {
+      "id": 5,
+      "review": "hung da comment\n",
+      "time": "04/04/2021",
+      "idProduct": "10",
+      "userName": "hungpv",
+      "avatar": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-customer%2Fuser.png?alt=media&token=eda90390-e7d2-4a10-9266-b4fbd6263600"
+    },
+    {
+      "id": 6,
+      "review": "hung da commet Ở đât\n",
+      "time": "05/05/2021",
+      "idProduct": "2",
+      "userName": "hungpv",
+      "avatar": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-customer%2Fuser.png?alt=media&token=eda90390-e7d2-4a10-9266-b4fbd6263600"
+    },
+    {
+      "id": 7,
+      "review": "hung reivew laij",
+      "time": "05/06/2021",
+      "idProduct": "2",
+      "userName": "hungpv",
+      "avatar": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-customer%2Fuser.png?alt=media&token=eda90390-e7d2-4a10-9266-b4fbd6263600"
+    },
+    {
+      "id": 8,
+      "review": "hung lai comment lai",
+      "time": "05 / 03/2021",
+      "idProduct": "2",
+      "userName": "hungpv",
+      "avatar": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-customer%2Fuser.png?alt=media&token=eda90390-e7d2-4a10-9266-b4fbd6263600"
+    },
+    {
+      "id": 9,
+      "review": "hung da comment . sai ho cai ban oi",
+      "time": "05/03/2021",
+      "idProduct": "2",
+      "userName": "hungpv",
+      "avatar": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-customer%2Fuser.png?alt=media&token=eda90390-e7d2-4a10-9266-b4fbd6263600"
+    },
+    {
+      "id": 10,
+      "review": "hung da commetn",
+      "time": "05/03/2021",
+      "idProduct": "4",
+      "userName": "hungpv",
+      "avatar": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-customer%2Fuser.png?alt=media&token=eda90390-e7d2-4a10-9266-b4fbd6263600"
+    },
+    {
+      "id": 11,
+      "review": "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "time": "05/03/2021",
+      "idProduct": "4",
+      "userName": "hungpv",
+      "avatar": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-customer%2Fuser.png?alt=media&token=eda90390-e7d2-4a10-9266-b4fbd6263600"
+    },
+    {
+      "id": 12,
+      "review": "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "time": "05/03/2021",
+      "idProduct": "4",
+      "userName": "hungpv",
+      "avatar": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-customer%2Fuser.png?alt=media&token=eda90390-e7d2-4a10-9266-b4fbd6263600"
+    },
+    {
+      "id": 13,
+      "review": "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "time": "05/03/2021",
+      "idProduct": "4",
+      "userName": "hungpv",
+      "avatar": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-customer%2Fuser.png?alt=media&token=eda90390-e7d2-4a10-9266-b4fbd6263600"
+    },
+    {
+      "id": 14,
+      "review": "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "time": "05/03/2021",
+      "idProduct": "4",
+      "userName": "hungpv",
+      "avatar": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-customer%2Fuser.png?alt=media&token=eda90390-e7d2-4a10-9266-b4fbd6263600"
+    },
+    {
+      "id": 15,
+      "review": "hung\n\norem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "time": "05/03/2021",
+      "idProduct": "4",
+      "userName": "hungpv",
+      "avatar": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-customer%2Fuser.png?alt=media&token=eda90390-e7d2-4a10-9266-b4fbd6263600"
+    },
+    {
+      "id": 16,
+      "review": "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "time": "05/03/2021",
+      "idProduct": "4",
+      "userName": "hungpv",
+      "avatar": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-customer%2Fuser.png?alt=media&token=eda90390-e7d2-4a10-9266-b4fbd6263600"
+    },
+    {
+      "id": 17,
+      "review": "hung",
+      "time": "05/03/2021",
+      "idProduct": "4",
+      "userName": "hungpv",
+      "avatar": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-customer%2Fuser.png?alt=media&token=eda90390-e7d2-4a10-9266-b4fbd6263600"
+    },
+    {
+      "id": 18,
+      "review": "hung",
+      "time": "05/03/2021",
+      "idProduct": "4",
+      "userName": "hungpv",
+      "avatar": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-customer%2Fuser.png?alt=media&token=eda90390-e7d2-4a10-9266-b4fbd6263600"
+    },
+    {
+      "id": 19,
+      "review": "hung",
+      "time": "05/03/2021",
+      "idProduct": "4",
+      "userName": "hungpv",
+      "avatar": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-customer%2Fuser.png?alt=media&token=eda90390-e7d2-4a10-9266-b4fbd6263600"
+    },
+    {
+      "id": 20,
+      "review": "hung\n",
+      "time": "05/03/2021",
+      "idProduct": "4",
+      "userName": "hungpv",
+      "avatar": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-customer%2Fuser.png?alt=media&token=eda90390-e7d2-4a10-9266-b4fbd6263600"
     }
   ],
   "categories": [
@@ -170,6 +349,8 @@
       "fullName": "phung van hung",
       "userName": "hungpv",
       "passWord": 1234567,
+      "role": true,
+      "isActive": true,
       "avatar": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-customer%2Fuser.png?alt=media&token=eda90390-e7d2-4a10-9266-b4fbd6263600"
     },
     {
@@ -177,20 +358,17 @@
       "fullName": "phung van hung",
       "userName": "hungpv",
       "passWord": 1234567,
+      "role": false,
+      "isActive": true,
       "avatar": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-customer%2Fuser.png?alt=media&token=eda90390-e7d2-4a10-9266-b4fbd6263600"
     },
     {
       "id": 3,
       "userName": "hungpvph",
-      "avatar": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-customer%2Fuser.png?alt=media&token=cfc3c489-6eea-4edc-ac37-e65f38453cbe",
-      "fullName": "phung van hung"
-    },
-    {
-      "id": 4,
-      "userName": "hung123456",
+      "isActive": true,
+      "role": false,
       "fullName": "phung van hung",
-      "passWord": "12345",
-      "avatar": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-customer%2Fuser.png?alt=media&token=c54f6337-54f8-4ee7-9b4d-acdd7d8b8939"
+      "avatar": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-customer%2Fuser.png?alt=media&token=cfc3c489-6eea-4edc-ac37-e65f38453cbe"
     }
   ],
   "order": [
@@ -206,6 +384,34 @@
       "name": "hung van phung",
       "phone": "0964911301",
       "address": "viet nam",
+      "userId": 1
+    },
+    {
+      "id": 3,
+      "name": "phung van hung",
+      "phone": "0964911301",
+      "address": "viet nam",
+      "userId": 1
+    },
+    {
+      "id": 4,
+      "name": "phugn van hung",
+      "phone": "0964911301",
+      "address": "ha noi viet nam",
+      "userId": 1
+    },
+    {
+      "id": 5,
+      "name": "hung",
+      "phone": "0923456789",
+      "address": "viet nam",
+      "userId": 1
+    },
+    {
+      "id": 6,
+      "name": "hung",
+      "phone": "0923456789",
+      "address": "ha noi viet nam",
       "userId": 1
     }
   ],
@@ -273,6 +479,70 @@
       "amount": 1,
       "productId": 9,
       "orderId": 2
+    },
+    {
+      "id": 27,
+      "name": "Fantastic Fresh Fish",
+      "image": "https://big-skins.com/frontend/foxic-html-demo/images/skins/fashion/products/product-01-1.webp",
+      "price": "34.00",
+      "sale": 10,
+      "status": true,
+      "quantity": "73",
+      "instock": 63,
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga consequatur provident pariatur blanditiis minus deserunt facere nesciunt vitae. Repellendus hic aliquam quasi corporis delectus odit commodi labore molestias recusandae expedita!",
+      "view": 13,
+      "cateId": 2,
+      "amount": 2,
+      "productId": 5,
+      "orderId": 3
+    },
+    {
+      "id": 28,
+      "name": "Refined Steel Shoes",
+      "image": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-product%2Fproduct-06-1.webp?alt=media&token=b32aa821-f54e-4584-9ce5-80e276aad190",
+      "price": "23",
+      "sale": "0",
+      "status": true,
+      "quantity": "34",
+      "instock": "34",
+      "description": "day la san pham nu",
+      "view": 14,
+      "cateId": 2,
+      "amount": 2,
+      "productId": 10,
+      "orderId": 4
+    },
+    {
+      "id": 29,
+      "name": "Refined Steel Shoes1",
+      "image": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-product%2Fproduct-06-1.webp?alt=media&token=b1a96cdb-b2ce-463e-a04d-0afc6f8eb8fa",
+      "price": "65.00",
+      "sale": "0",
+      "status": true,
+      "quantity": "44",
+      "instock": "44",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga consequatur provident pariatur blanditiis minus deserunt facere nesciunt vitae. Repellendus hic aliquam quasi corporis delectus odit commodi labore molestias recusandae expedita!",
+      "view": "117",
+      "cateId": 2,
+      "amount": 4,
+      "productId": 1,
+      "orderId": 5
+    },
+    {
+      "id": 30,
+      "name": "Refined Steel Shoes1",
+      "image": "https://firebasestorage.googleapis.com/v0/b/save-image-b463c.appspot.com/o/image-product%2Fproduct-06-1.webp?alt=media&token=b1a96cdb-b2ce-463e-a04d-0afc6f8eb8fa",
+      "price": "65.00",
+      "sale": "0",
+      "status": true,
+      "quantity": "44",
+      "instock": "44",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga consequatur provident pariatur blanditiis minus deserunt facere nesciunt vitae. Repellendus hic aliquam quasi corporis delectus odit commodi labore molestias recusandae expedita!",
+      "view": "117",
+      "cateId": 2,
+      "amount": 4,
+      "productId": 1,
+      "orderId": 6
     }
   ],
   "blog": [
@@ -360,6 +630,46 @@
       "email": "hung@gmailcom.com",
       "subTitle": "subtitle",
       "message": "12345",
+      "userId": 1
+    },
+    {
+      "id": 9,
+      "name": "",
+      "email": "",
+      "subTitle": "",
+      "message": "",
+      "userId": 1
+    },
+    {
+      "id": 10,
+      "name": "hung",
+      "email": "hung@gmail.com",
+      "subTitle": "subtitle",
+      "message": "hung lien he dden  ban ",
+      "userId": 1
+    },
+    {
+      "id": 11,
+      "name": "hung",
+      "email": "hung",
+      "subTitle": "subtitle",
+      "message": "hung",
+      "userId": 1
+    },
+    {
+      "id": 12,
+      "name": "hung",
+      "email": "hung@gmailcom.vom",
+      "subTitle": "subtitle",
+      "message": "hung",
+      "userId": 1
+    },
+    {
+      "id": 13,
+      "name": "hung",
+      "email": "hung@gmailcom.com",
+      "subTitle": "subtitle",
+      "message": "hung",
       "userId": 1
     }
   ]
