@@ -5,7 +5,6 @@ import ListCheckOut from "./ListCheckOut";
 
 const HandleLogicCart = {
     getButtons() {
-        LocalStorage.saveProducts();
         const buttonsCartElement = [...document.querySelectorAll('#btn-cart')];
         let cart = [];
 
@@ -38,8 +37,8 @@ const HandleLogicCart = {
         let tempTotal = 0;
         let itemsTotal = 0;
         cart.map(item => {
-            tempTotal += item.price * parseFloat(item.amount);
-            itemsTotal += parseFloat(item.amount);
+            tempTotal += item.price * parseInt(item.amount);
+            itemsTotal += parseInt(item.amount);
         });
 
         $('#cart-values').innerText = itemsTotal;
@@ -55,7 +54,7 @@ const HandleLogicCart = {
                 </div>
                 <div class="ml-3">
                     <p class="text-sm font-semibold">${cartItems.name}</p>
-                    <p class="text-xs font-normal mt-0.5">$ ${(cartItems.price*cartItems.amount).toFixed(2)}</p>
+                    <p class="text-xs font-normal mt-0.5">$ ${(cartItems.price * cartItems.amount).toFixed(2)}</p>
                     <button data-id=${cartItems.id} class="remove text-xs text-gray-600">remove</button>
                 </div>
             </div>
@@ -85,6 +84,9 @@ const HandleLogicCart = {
     showCart() {
         document.querySelector('.cart').classList.add('showCart');
         document.querySelector('.cart-overlay').classList.add('transparentBcg');
+    }, hideCart() {
+        document.querySelector('.cart').classList.remove('showCart');
+        document.querySelector('.cart-overlay').classList.remove('transparentBcg');
     },
     setUpAPP() {
         let cart = LocalStorage.getCart();
@@ -96,18 +98,14 @@ const HandleLogicCart = {
     populateCart(cart) {
         cart.forEach(item => this.addCartItems(item));
     },
-    hideCart() {
-        document.querySelector('.cart').classList.remove('showCart');
-        document.querySelector('.cart-overlay').classList.remove('transparentBcg');
-    },
     logical() {
         $('#clearCartId').addEventListener('click', () => {
             this.clearCart();
         });
-        $('.cart-items').addEventListener('click',async (e) => {
+        $('.cart-items').addEventListener('click', async (e) => {
             if (e.target.classList.contains('remove')) {
                 const uerConfirm = confirm('Bạn có chắc muốn xóa ?');
-                if (uerConfirm){
+                if (uerConfirm) {
                     let removeItem = e.target;
                     let id = removeItem.dataset.id;
                     $('.cart-items').removeChild(removeItem.parentElement.parentElement.parentElement.parentElement)
@@ -140,7 +138,7 @@ const HandleLogicCart = {
                     downAmount.parentElement.previousElementSibling.innerText = tempItem.amount;
                 } else {
                     let userConfirm = confirm('Bạn có chắc muốn xóa ?');
-                    if (userConfirm){
+                    if (userConfirm) {
                         $('.cart-items').removeChild(downAmount.parentElement.parentElement.parentElement.parentElement)
                         this.removeItems(id);
                     }

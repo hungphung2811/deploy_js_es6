@@ -239,7 +239,7 @@ const Header = {
             <ul
                 class="absolute w-36 -mt-32 bg-gray-100 shadow opacity-0 invisible group-hover:mt-1.5 group-hover:opacity-100 group-hover:visible transition-all duration-500">
                 <li>
-                    <a class="flex p-2" href="/#/backend">Quan tri</a>
+                    <a class="flex p-2" href="/#/admin">Quan tri</a>
                 </li>
                 <li>
                     <button id="logoutId" class="flex p-2">Log out</button>

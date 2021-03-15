@@ -1,7 +1,6 @@
 import OrderApi from "../../api/orderApi";
 import OrderDetailApi from "../../api/orderDetailApi";
 import ProductApi from "../../api/productApi";
-import { CheckLogin } from "../../components/auth/checkLogin";
 import ListCheckOut from "../../components/website/cart/ListCheckOut";
 import LocalStorage from "../../localStorage/LocalStorage";
 import { $ } from "../../utils";
@@ -9,7 +8,7 @@ import { isRequired,isPhoneNumber } from "../../validate/validate";
 
 const CheckOut = {
     async render() {
-        if (!CheckLogin()) {
+        if (!LocalStorage.getUser()) {
             alert("bạn cần đăng nhập trước khi checkout !");
             await window.history.back();
         }

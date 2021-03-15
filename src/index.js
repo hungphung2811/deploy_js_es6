@@ -18,6 +18,8 @@ import ProductsPage from './pages/website/ProductsPage';
 import { $, backToTop, parseRequestURL, PreLoad } from './utils';
 import AdminOrderPage from './pages/admin/AdminOrderPage';
 import AdminCustomerPage from './pages/admin/AdminCustomer';
+import AdminContactsPage from './pages/admin/AdminContactPage';
+import AdminBlogsPage from './pages/admin/AdminBlogPage';
 
 const routes = {
     '/frontend': HomePage,
@@ -28,11 +30,13 @@ const routes = {
     '/frontend/blog': BlogPage,
     '/frontend/blog/:id': BlogDetailPage,
     '/frontend/checkout': CheckOut,
-    '/backend': DashboardPage,
-    '/backend/products': AdminProductsPage,
-    '/backend/categories': AdminCategoriesPage,
-    '/backend/order': AdminOrderPage,
-    '/backend/customers': AdminCustomerPage,
+    '/admin': DashboardPage,
+    '/admin/products': AdminProductsPage,
+    '/admin/categories': AdminCategoriesPage,
+    '/admin/order': AdminOrderPage,
+    '/admin/customers': AdminCustomerPage,
+    '/admin/contact': AdminContactsPage,
+    '/admin/blog': AdminBlogsPage,
 };
 
 const router = async () => {
@@ -41,7 +45,7 @@ const router = async () => {
     const request =
         (modules ? `/${modules}` : '/') + (resource ? `/${resource}` : '') + (id ? `/:id` : '');
     const page = routes[request] ? routes[request] : Error404Page;
-    if (modules == 'backend') {
+    if (modules == 'admin') {
         $('.app').innerHTML = /*html*/
             `<div class="grid grid-cols-12 container mx-auto">
                 ${Sidebar.render()}

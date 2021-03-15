@@ -13,6 +13,10 @@ const ContactApi = {
         const url = `/contacts`;
         return axiosClient.post(url, contact);
     },
+    remove(id){
+        const url = `/contacts/${id}`;
+        return axiosClient.delete(url);
+    },
     getItemsByOption(option) {
         const arrOption = [];
         if (option) {

@@ -75,8 +75,9 @@
       "quantity": "61",
       "instock": "60",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga consequatur provident pariatur blanditiis minus deserunt facere nesciunt vitae. Repellendus hic aliquam quasi corporis delectus odit commodi labore molestias recusandae expedita!",
-      "view": "12",
-      "cateId": 1
+      "view": 14,
+      "cateId": 1,
+      "amount": 1
     },
     {
       "id": 8,
@@ -570,53 +571,6 @@
   ],
   "contacts": [
     {
-      "id": 1,
-      "name": "hung",
-      "email": "hung",
-      "subTitle": "subtitle",
-      "message": "meassage"
-    },
-    {
-      "id": 2,
-      "name": "hung",
-      "email": "hung",
-      "subTitle": "subtitle",
-      "message": "phung van hung",
-      "userId": 1
-    },
-    {
-      "id": 3,
-      "name": "hung",
-      "email": "hung",
-      "subTitle": "subtitle",
-      "message": "hung da gui message nay",
-      "userId": 1
-    },
-    {
-      "id": 4,
-      "name": "hung",
-      "email": "hung",
-      "subTitle": "subtitle",
-      "message": "123",
-      "userId": 1
-    },
-    {
-      "id": 5,
-      "name": "hung",
-      "email": "hung",
-      "subTitle": "subtitle",
-      "message": "345",
-      "userId": 1
-    },
-    {
-      "id": 6,
-      "name": "",
-      "email": "",
-      "subTitle": "",
-      "message": "",
-      "userId": 1
-    },
-    {
       "id": 7,
       "name": "hung",
       "email": "hung@gmailcom.com",
@@ -633,43 +587,11 @@
       "userId": 1
     },
     {
-      "id": 9,
-      "name": "",
-      "email": "",
-      "subTitle": "",
-      "message": "",
-      "userId": 1
-    },
-    {
       "id": 10,
       "name": "hung",
       "email": "hung@gmail.com",
       "subTitle": "subtitle",
       "message": "hung lien he dden  ban ",
-      "userId": 1
-    },
-    {
-      "id": 11,
-      "name": "hung",
-      "email": "hung",
-      "subTitle": "subtitle",
-      "message": "hung",
-      "userId": 1
-    },
-    {
-      "id": 12,
-      "name": "hung",
-      "email": "hung@gmailcom.vom",
-      "subTitle": "subtitle",
-      "message": "hung",
-      "userId": 1
-    },
-    {
-      "id": 13,
-      "name": "hung",
-      "email": "hung@gmailcom.com",
-      "subTitle": "subtitle",
-      "message": "hung",
       "userId": 1
     }
   ]
