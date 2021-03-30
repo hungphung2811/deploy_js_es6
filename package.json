@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
     "start": "webpack serve --open --mode development",
     "server": "json-server --watch ./src/db.json --port 3300",
     "tailwind": "npx tailwindcss-cli@latest build ./src/css/tailwind.css -c ./tailwind.config.js -o ./src/css/style.css"
